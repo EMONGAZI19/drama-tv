@@ -27,19 +27,15 @@
     .player-container {
       max-width: 800px;
       margin: 20px auto 0;
-      position: relative;
     }
 
     .channel-info {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 8px 12px;
-      border-radius: 8px;
       display: flex;
       align-items: center;
       gap: 10px;
+      margin: 10px auto;
+      max-width: 800px;
+      padding-left: 10px;
     }
 
     .channel-info img {
@@ -102,11 +98,11 @@
 
   <div class="player-container">
     <video id="player" controls autoplay></video>
+  </div>
 
-    <div class="channel-info">
-      <img id="channel-logo" src="" alt="Logo" />
-      <span id="channel-name">চ্যানেল লোড হচ্ছে...</span>
-    </div>
+  <div class="channel-info">
+    <img id="channel-logo" src="" alt="Logo" />
+    <span id="channel-name">চ্যানেল লোড হচ্ছে...</span>
   </div>
 
   <div class="related-channels">
