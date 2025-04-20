@@ -11,24 +11,26 @@ body {
 }
 
 .notice-bar {
-  background: linear-gradient(to right, #ff4e50, #f9d423);
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #fff;
-  padding: 12px 0;
+  padding: 12px;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  border-top: 3px solid #ff0000;
-  border-bottom: 3px solid #ff0000;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  margin: 15px 10px;
 }
 
 .notice-bar marquee {
   font-family: 'Segoe UI', sans-serif;
   letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
+
 
 h3 {
   border-left: 4px solid red;
