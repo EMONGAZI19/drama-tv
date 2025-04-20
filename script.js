@@ -1,5 +1,7 @@
-if (document.getElementById("channelContainer")) {
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("loader");
   const container = document.getElementById("channelContainer");
+  const searchInput = document.getElementById("searchInput");
 
   function renderAllChannels() {
     container.innerHTML = "";
@@ -19,7 +21,6 @@ if (document.getElementById("channelContainer")) {
         div.onclick = () => {
           window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
         };
-
         div.innerHTML = `
           <img src="${channel.img}" alt="${channel.name}" />
           <span>${channel.name}</span>
@@ -33,19 +34,8 @@ if (document.getElementById("channelContainer")) {
     }
   }
 
-  renderAllChannels();
-
-  // Search functionality
-  const searchInput = document.getElementById("searchInput");
-  searchInput.addEventListener("input", function () {
-    const query = this.value.toLowerCase();
+  function filterChannels(query) {
     container.innerHTML = "";
-
-    if (!query) {
-      renderAllChannels();
-      return;
-    }
-
     const resultGrid = document.createElement("div");
     resultGrid.className = "channel-grid";
 
@@ -57,7 +47,6 @@ if (document.getElementById("channelContainer")) {
           div.onclick = () => {
             window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
           };
-
           div.innerHTML = `
             <img src="${channel.img}" alt="${channel.name}" />
             <span>${channel.name}</span>
@@ -72,11 +61,23 @@ if (document.getElementById("channelContainer")) {
     } else {
       container.appendChild(resultGrid);
     }
+  }
+
+  searchInput.addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    if (!query) {
+      renderAllChannels();
+    } else {
+      filterChannels(query);
+    }
   });
-}
 
+  if (loader) loader.style.display = "none";
+  renderAllChannels();
+});
+
+// Scroll to top button
 const scrollBtn = document.getElementById("scrollToTopBtn");
-
 window.onscroll = () => {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
     scrollBtn.style.display = "block";
@@ -84,17 +85,11 @@ window.onscroll = () => {
     scrollBtn.style.display = "none";
   }
 };
-
 scrollBtn.onclick = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  if (loader) {
-    loader.style.display = "none";
-  }
-});
+function toggleMenu() {
+  const menu = document.getElementById("dropdown");
+  menu.classList.toggle("show");
+}
