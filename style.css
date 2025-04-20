@@ -12,23 +12,25 @@ body {
 
 
 .notice-bar {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px;
-  border-radius: 12px;
-  text-align: center;
+  background-color: #000;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  padding: 10px;
+  border: 2px dashed #00ff00;
   margin: 20px 10px;
-  color: #fff;
-  font-weight: bold;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  text-align: center;
+  animation: flicker 2s infinite;
 }
 
 .notice-bar marquee {
-  font-size: 15px;
-  color: #ffffff;
-  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 
 
