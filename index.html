@@ -5,16 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drama World Live TV</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e1e1e;
+      padding: 10px 20px;
+      border-bottom: 2px solid red;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 24px;
+      color: #ffcc00;
+      margin: 10px 0;
+    }
+
+    .notice-bar {
+      background: #333;
+      color: #ffcc00;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    /* Placeholder for dropdown */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      background: #222;
+      border: 1px solid #444;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 0;
+    }
+
+    .dropdown-menu a:hover {
+      color: #ffcc00;
+    }
+  </style>
 </head>
 <body>
+
+  <div class="header">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo">
+      <img src="https://i.imgur.com/zY7AvQ8.png" alt="Drama World Logo" />
+    </div>
+  </div>
+
+  <div id="dropdown" class="dropdown-menu">
+    <!-- এখানে ক্যাটাগরিগুলো JS দিয়ে লোড করা যাবে -->
+    <a href="#Bangladeshi">Bangladeshi</a>
+    <a href="#Entertainment">Entertainment</a>
+    <a href="#Sports">Sports</a>
+    <a href="#Kids">Kids</a>
+    <a href="#Music">Music</a>
+  </div>
+
   <h2 class="title">Drama World Live TV</h2>
+
   <div class="notice-bar">
     <marquee behavior="scroll" direction="left">
-      Welcome to DRAMA WORLD LIVE TV | চ্যানেলে ক্লিক করে কিছুক্ষন অপেক্ষা করুন প্লে হবে | আপডেট চলছে | Thank You for Watching!
+      Welcome to DRAMA WORLD LIVE TV | আপডেট চলছে অপেক্ষা করুন | Thank You for Watching!
     </marquee>
   </div>
 
   <div id="channelContainer"></div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdown");
+      menu.classList.toggle("show");
+    }
+  </script>
 
   <script src="channels.js"></script>
   <script src="script.js"></script>
