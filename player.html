@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="bn">
+<!DOCTYPE html>
+<html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,150 +12,162 @@
       background: #111;
       color: #fff;
       font-family: 'Segoe UI', sans-serif;
-    }header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #1e1e1e;
-  padding: 10px 20px;
-  border-bottom: 2px solid red;
-}
+    }
 
-.logo img {
-  height: 40px;
-}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e1e1e;
+      padding: 10px 20px;
+      border-bottom: 2px solid red;
+    }
 
-.menu {
-  position: relative;
-}
+    .logo img {
+      height: 40px;
+      cursor: pointer;
+    }
 
-.dropdown {
-  background: #2a2a2a;
-  border-radius: 6px;
-  padding: 8px 12px;
-  cursor: pointer;
-  color: #ffcc00;
-}
+    .menu {
+      position: relative;
+    }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+    .dropdown {
+      background: #2a2a2a;
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+      color: #ffcc00;
+      user-select: none;
+    }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 40px;
-  right: 0;
-  background: #2a2a2a;
-  min-width: 160px;
-  z-index: 1;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: #2a2a2a;
+      min-width: 160px;
+      z-index: 1;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    }
 
-.dropdown-content a {
-  color: #fff;
-  padding: 10px 12px;
-  text-decoration: none;
-  display: block;
-  font-size: 14px;
-}
+    .dropdown-content a {
+      color: #fff;
+      padding: 10px 12px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+    }
 
-.dropdown-content a:hover {
-  background-color: #444;
-}
+    .dropdown-content a:hover {
+      background-color: #444;
+    }
 
-.player-container {
-  max-width: 800px;
-  margin: 20px auto 10px;
-}
+    .player-container {
+      max-width: 800px;
+      margin: 20px auto 10px;
+    }
 
-.channel-info {
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-  margin-left: 20px;
-  gap: 10px;
-}
+    .channel-info {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+      margin-left: 20px;
+      gap: 10px;
+    }
 
-.channel-info img {
-  width: 60px;
-  height: 40px;
-  border-radius: 6px;
-  object-fit: cover;
-  box-shadow: 0 0 5px #000;
-}
+    .channel-info img {
+      width: 60px;
+      height: 40px;
+      border-radius: 6px;
+      object-fit: cover;
+      box-shadow: 0 0 5px #000;
+    }
 
-.channel-info span {
-  font-size: 18px;
-  font-weight: 500;
-  color: #ffcc00;
-}
+    .channel-info span {
+      font-size: 18px;
+      font-weight: 500;
+      color: #ffcc00;
+    }
 
-.related-channels {
-  margin-top: 30px;
-}
+    .related-channels {
+      margin-top: 30px;
+    }
 
-.related-channels h3 {
-  color: #ffcc00;
-  margin-bottom: 10px;
-  text-align: center;
-}
+    .related-channels h3 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+      text-align: center;
+    }
 
-.related-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 15px;
-  padding: 0 10px;
-}
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+      padding: 0 10px;
+    }
 
-.related-grid .channel {
-  background: #222;
-  border-radius: 10px;
-  padding: 5px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+    .related-grid .channel {
+      background: #222;
+      border-radius: 10px;
+      padding: 5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
 
-.related-grid .channel:hover {
-  transform: scale(1.05);
-}
+    .related-grid .channel:hover {
+      transform: scale(1.05);
+    }
 
-.related-grid .channel img {
-  width: 100%;
-  border-radius: 5px;
-}
+    .related-grid .channel img {
+      width: 100%;
+      border-radius: 5px;
+    }
 
-.related-grid .channel span {
-  font-size: 13px;
-  display: block;
-  margin-top: 5px;
-  color: #fff;
-}
-
+    .related-grid .channel span {
+      font-size: 13px;
+      display: block;
+      margin-top: 5px;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgvvU0OLi3VZCQAUnQCaLKPzvjX8JKHB7h6-eHbILeVcRKado9TSMmQhgcJGx91XzJGDb-iIU2WH-VpVFB_peOjdG_kjHsjXEqveY91xL2t8x9u521L7SOuwBdxzZvrq16tXIwJR0yBRlIDaLT3MBAXYgZiFsutn7yX6XdEhvexOtRRED-flSHNSbHTaqMI=s150" alt="Drama World Logo" class="site-logo"/> </a>
+      <a href="index.html">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgvvU0OLi3VZCQAUnQCaLKPzvjX8JKHB7h6-eHbILeVcRKado9TSMmQhgcJGx91XzJGDb-iIU2WH-VpVFB_peOjdG_kjHsjXEqveY91xL2t8x9u521L7SOuwBdxzZvrq16tXIwJR0yBRlIDaLT3MBAXYgZiFsutn7yX6XdEhvexOtRRED-flSHNSbHTaqMI=s150" alt="Drama World Logo" class="site-logo" />
+      </a>
     </div>
     <div class="menu">
-      <div class="dropdown">Chatagory
+      <div class="dropdown" id="dropdownBtn">ক্যাটাগরি
         <div class="dropdown-content" id="categoryMenu">
           <!-- Category links will be injected here -->
         </div>
       </div>
     </div>
-  </header>  <div class="player-container">
+  </header>
+
+  <div class="player-container">
     <video id="player" controls autoplay></video>
-  </div>  <div class="channel-info">
+  </div>
+
+  <div class="channel-info">
     <img id="channel-logo" src="" alt="Channel Logo">
-    <span id="channel-name">Loading Please w8...</span>
-  </div>  <div class="related-channels">
+    <span id="channel-name">Loading Please wait...</span>
+  </div>
+
+  <div class="related-channels">
     <h3>Related Channels</h3>
     <div class="related-grid" id="related-channels"></div>
-  </div>  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>  <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>  <script src="channels.js"></script>  <script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+  <script src="channels.js"></script>
+  <script>
     const urlParams = new URLSearchParams(window.location.search);
     const streamUrl = decodeURIComponent(urlParams.get("stream"));
     const category = decodeURIComponent(urlParams.get("category"));
@@ -213,5 +226,21 @@
       a.textContent = cat;
       categoryMenu.appendChild(a);
     }
-  </script></body>
+
+    // Toggle dropdown on click
+    const dropdownBtn = document.getElementById("dropdownBtn");
+    dropdownBtn.addEventListener("click", () => {
+      const content = document.getElementById("categoryMenu");
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+
+    // Close dropdown on outside click
+    document.addEventListener("click", function(event) {
+      const dropdown = document.getElementById("dropdownBtn");
+      if (!dropdown.contains(event.target)) {
+        document.getElementById("categoryMenu").style.display = "none";
+      }
+    });
+  </script>
+</body>
 </html>
