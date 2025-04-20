@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drama World Live TV</title>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+    }
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    .channel {
+      background: #1e1e1e;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .channel img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .channel span {
+      display: block;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+    h3 {
+      border-left: 4px solid red;
+      padding-left: 10px;
+      margin: 30px 0 10px;
+      color: #f2f2f2;
+    }
+    .notice-bar {
+      background-color: #222;
+      color: #ffcc00;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      border-top: 2px solid red;
+      border-bottom: 2px solid red;
+      margin-bottom: 20px;
+    }
+    .notice-bar marquee {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Drama World Live TV</h2>
+  <div class="notice-bar">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      Welcome to DRAMA WORLD LIVE TV | চ্যানেলে ক্লিক করে কিছুক্ষন অপেক্ষা করুন প্লে হবে | আপডেট চলছে অপেক্ষা করুন | Thank You for Watching!
+    </marquee>
+  </div>
+
+  <!-- Live Now Section -->
+  <h3>Live Now</h3>
+  <div class="channel-grid">
+    <div class="channel" onclick="openPlayer('https://example.com/stream1.m3u8', 'Live Now')">
+      <img src="https://i.postimg.cc/Wzdx0R6w/20250416-131233.png" />
+      <span>PSL</span>
+    </div>
+    <div class="channel" onclick="openPlayer('https://pol6.dunyapurkaraja.com:999/hls/star1in.m3u8?md5=ANjf67negXKTWGgA5NJwKg&expires=1745138035', 'Live Now')">
+      <img src="https://i.postimg.cc/mkKJwdmf/20250416-130656.png" />
+      <span>IPL 2025</span>
+    </div>
+    <div class="channel" onclick="openPlayer('https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1709/output/master.m3u8', 'Live Now')">
+      <img src="https://i.postimg.cc/D0xhkQXv/20250420-103455.png" />
+      <span>Bangladesh VS Zimbabwe</span>
+    </div>
+  </div>
+
+  <!-- Bangladesh Section -->
+  <h3>Bangladesh</h3>
+  <div class="channel-grid">
+    <div class="channel" onclick="openPlayer('http://38.96.178.201/live/JamunaTV/index.m3u8', 'Bangladesh')">
+      <img src="https://i.postimg.cc/gkmGpTGt/20250416_220424.png" />
+      <span>Jamuna TV</span>
+    </div>
+    <div class="channel" onclick="openPlayer('https://xstream-bd-xtv.tiiny.io/stream.php?id=1a7a1365-ae2c-470f-9fb2-25c6e83bb108&e=.m3u8', 'Bangladesh')">
+      <img src="https://i.postimg.cc/jjprF88X/20250416_215652.png" />
+      <span>Ekkator TV</span>
+    </div>
+    <!-- আরও চ্যানেল এখানে যুক্ত করুন -->
+  </div>
+
+  <!-- Entertainment Section -->
+  <h3>Entertainment</h3>
+  <div class="channel-grid">
+    <div class="channel" onclick="openPlayer('https://your.m3u8/link', 'Entertainment')">
+      <img src="https://via.placeholder.com/150x100?text=ATN+Bangla" />
+      <span>ATN Bangla</span>
+    </div>
+    <!-- আরও চ্যানেল এখানে যুক্ত করুন -->
+  </div>
+
+  <!-- Indian Bangla Section -->
+  <h3>Indian Bangla</h3>
+  <div class="channel-grid">
+    <div class="channel" onclick="openPlayer('https://your.m3u8/link', 'Indian Bangla')">
+      <img src="https://via.placeholder.com/150x100?text=Zee+Bangla" />
+      <span>Zee Bangla</span>
+    </div>
+    <!-- আরও চ্যানেল এখানে যুক্ত করুন -->
+  </div>
+
+  <!-- Kids Section -->
+  <h3>Kids</h3>
+  <div class="channel-grid">
+    <div class="channel" onclick="openPlayer('https://your.m3u8/link', 'Kids')">
+      <img src="https://via.placeholder.com/150x100?text=Cartoon+Network" />
+      <span>Cartoon Network</span>
+    </div>
+    <!-- আরও চ্যানেল এখানে যুক্ত করুন -->
+  </div>
+
+  <!-- Sports Section -->
+  <h3>Sports</h3>
+  <div class="channel-grid">
+    <div class="channel" onclick="openPlayer('https://your.m3u8/link', 'Sports')">
+      <img src="https://via.placeholder.com/150x100?text=Star+Sports+1" />
+      <span>Star Sports 1</span>
+    </div>
+    <!-- আরও চ্যানেল এখানে যুক্ত করুন -->
+  </div>
+
+  <script>
+    function openPlayer(streamUrl, category) {
+      const encodedUrl = encodeURIComponent(streamUrl);
+      const encodedCategory = encodeURIComponent(category);
+      window.location.href = `player.html?stream=${encodedUrl}&category=${encodedCategory}`;
+    }
+  </script>
+</body>
+</html>
