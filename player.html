@@ -61,24 +61,50 @@
       max-width: 800px;
       margin: 20px auto 10px;
     }
-    .channel-info {
-      display: flex;
-      align-items: center;
-      margin-top: 15px;
-      margin-left: 20px;
-      gap: 10px;
-    }
-    .channel-info img {
-      width: 60px;
-      height: 40px;
-      border-radius: 6px;
-      object-fit: cover;
-      box-shadow: 0 0 5px #000;
-    }
-    .channel-info span {
-      font-size: 18px;
-      font-weight: 500;
-      color: #ffcc00;
+   
+  * {
+  box-sizing: border-box; /* সব এলিমেন্টে box-sizing এর মান border-box করা হয়েছে */
+}
+
+.channel-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #333;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px; /* নিচে জায়গা রাখার জন্য */
+  flex-wrap: wrap; /* ফোন বা ছোট স্ক্রীনে উপাদানগুলো নিচে চলে যাবে */
+}
+
+.channel-info img {
+  width: 80px; /* লগো সাইজ */
+  height: 60px; /* লগো সাইজ */
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 0 8px #000;
+}
+
+.channel-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.channel-info span#channel-name {
+  font-size: 24px; 
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.channel-info span#channel-category {
+  font-size: 16px;
+  color: #ffcc00;
+  font-weight: 500;
+  margin-top: 5px;
+}
+  
     }
     .related-channels {
       margin-top: 30px;
@@ -174,6 +200,51 @@
   color: #aaa;
   margin-top: 20px;
 }
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    video {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    }
+
+    .plyr__menu__container {
+      background-color: #1a1a1a !important;
+      border-radius: 8px !important;
+      box-shadow: 0 6px 16px rgba(255, 0, 0, 0.4) !important;
+      overflow: hidden;
+    }
+
+    .plyr__control[role="menuitemradio"] {
+      background-color: transparent !important;
+      color: #fff !important;
+      font-size: 14px !important;
+      padding: 10px 18px !important;
+      transition: background-color 0.3s, color 0.3s !important;
+    }
+
+    .plyr__control[role="menuitemradio"]:hover {
+      background-color: #ff0000 !important;
+      color: #fff !important;
+    }
+
+    .plyr__control[role="menuitemradio"][aria-checked="true"] {
+      background-color: #292929 !important;
+      color: #ffcc00 !important;
+      font-weight: bold !important;
+      border-left: 4px solid red !important;
+    }
+  </style>
+  
   </style>
 </head>
 <body>
@@ -197,8 +268,10 @@
   </div>
 
   <div class="channel-info">
-    <img id="channel-logo" src="" alt="Channel Logo">
+  <img id="channel-logo" src="" alt="Channel Logo">
+  <div>
     <span id="channel-name">Loading Please wait...</span>
+    <span id="channel-category">Category Name</span> <!-- ক্যাটাগরি নাম এখানে থাকবে -->
   </div>
 
   <div class="related-channels">
@@ -210,6 +283,7 @@
   <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
   <script src="channels.js"></script>
   <script>
+  
     const urlParams = new URLSearchParams(window.location.search);
     const streamUrl = decodeURIComponent(urlParams.get("stream"));
     const category = decodeURIComponent(urlParams.get("category"));
@@ -221,6 +295,7 @@
 
     const video = document.getElementById("player");
     const player = new Plyr(video);
+  
 
     if (Hls.isSupported()) {
       const hls = new Hls();
@@ -230,6 +305,7 @@
         video.play();
         addQualitySelector(hls);
       });
+      
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = streamUrl;
       video.addEventListener("loadedmetadata", function () {
