@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
       let grid;
 
       if (category === "Live Now") {
-        // Create a wrapper for sliding effect
         const sliderWrapper = document.createElement("div");
         sliderWrapper.className = "live-slider-wrapper";
 
@@ -44,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         section.appendChild(sliderWrapper);
         container.appendChild(section);
       } else {
-        // Regular grid layout
         grid = document.createElement("div");
         grid.className = "channel-grid";
 
@@ -70,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Start animation after rendering
     animateLiveSlider();
   }
 
@@ -142,15 +139,13 @@ function animateLiveSlider() {
   let index = 0;
 
   function slideNext() {
-    if (index >= totalSlides - 2) return; // Stop before overflow
+    if (index >= totalSlides - 2) return;
 
-    // Make sure the width is correct to accommodate 3 items at once
     slider.style.transition = "transform 1s ease-in-out";
-    slider.style.transform = `translateX(-${index * 33.33}%)`; // Adjust slide width for 3 items
+    slider.style.transform = `translateX(-${index * 33.33}%)`;
     index++;
     setTimeout(slideNext, 4000);
   }
 
-  // Initialize sliding after 4 seconds
   setTimeout(slideNext, 4000);
 }
