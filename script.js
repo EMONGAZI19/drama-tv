@@ -1,33 +1,60 @@
-function openPlayer(url, category) {
-  window.location.href = `player.html?stream=${encodeURIComponent(url)}&category=${encodeURIComponent(category)}`;
-}
+// Load channels into index.html
+if (document.getElementById("channelContainer")) {
+  const container = document.getElementById("channelContainer");
 
-function groupChannelsByCategory() {
-  const grouped = {};
-  channels.forEach(channel => {
-    if (!grouped[channel.category]) grouped[channel.category] = [];
-    grouped[channel.category].push(channel);
-  });
-  return grouped;
-}
+  for (const category in channels) {
+    const section = document.createElement("div");
+    const heading = document.createElement("h3");
+    heading.textContent = category;
 
-function createChannelHTML(channel) {
-  return `
-    <div class="channel" onclick="openPlayer('${channel.url}', '${channel.category}')">
-      <img src="${channel.thumbnail}" />
-      <span>${channel.name}</span>
-    </div>
-  `;
-}
+    const grid = document.createElement("div");
+    grid.className = "channel-grid";
 
-function renderChannels() {
-  const container = document.getElementById('channel-container');
-  const grouped = groupChannelsByCategory();
-  for (let category in grouped) {
-    const section = document.createElement('section');
-    section.innerHTML = `<h3>${category}</h3><div class="channel-grid">${grouped[category].map(createChannelHTML).join('')}</div>`;
+    channels[category].forEach((channel) => {
+      const div = document.createElement("div");
+      div.className = "channel";
+      div.onclick = () => {
+        window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}`;
+      };
+
+      div.innerHTML = `
+        <img src="${channel.image}" />
+        <span>${channel.name}</span>
+      `;
+      grid.appendChild(div);
+    });
+
+    section.appendChild(heading);
+    section.appendChild(grid);
     container.appendChild(section);
   }
 }
 
-document.addEventListener('DOMContentLoaded', renderChannels);
+// Load player and related channels
+if (window.location.pathname.includes("player.html")) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const streamUrl = urlParams.get("stream");
+  const category = urlParams.get("category");
+
+  const player = document.getElementById("videoPlayer");
+  if (player && streamUrl) {
+    player.src = streamUrl;
+  }
+
+  const relatedContainer = document.getElementById("relatedChannels");
+  if (relatedContainer && category && channels[category]) {
+    channels[category].forEach((channel) => {
+      const div = document.createElement("div");
+      div.className = "channel";
+      div.onclick = () => {
+        window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}`;
+      };
+
+      div.innerHTML = `
+        <img src="${channel.image}" />
+        <span>${channel.name}</span>
+      `;
+      relatedContainer.appendChild(div);
+    });
+  }
+}
