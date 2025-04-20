@@ -61,25 +61,35 @@
       max-width: 800px;
       margin: 20px auto 10px;
     }
+
     .channel-info {
-      display: flex;
-      align-items: center;
-      margin-top: 15px;
-      margin-left: 20px;
-      gap: 10px;
-    }
-    .channel-info img {
-      width: 60px;
-      height: 40px;
-      border-radius: 6px;
-      object-fit: cover;
-      box-shadow: 0 0 5px #000;
-    }
-    .channel-info span {
-      font-size: 18px;
-      font-weight: 500;
-      color: #ffcc00;
-    }
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 20px;
+  gap: 10px;
+  position: relative;
+  padding: 10px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* স্টাইলিশ গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.channel-info img {
+  width: 60px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 0 5px #000;
+}
+
+.channel-info span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* নামের ওপর ছায়া */
+}
+    
     .related-channels {
       margin-top: 30px;
     }
