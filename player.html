@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drama World - Live Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+</head>
+<body>
+
+<h2 style="text-align:center;">Live TV - <span id="channel-name"></span></h2>
+
+<video id="player" controls autoplay></video>
+
+<div class="notice-bar">
+  <marquee behavior="scroll" direction="left" scrollamount="5">
+    Watching live stream of <span id="channel-name"></span>. Please wait while it loads.
+  </marquee>
+</div>
+
+<h3>More Channels</h3>
+<div class="channel-grid" id="other-channels">
+  <!-- Other channels will be loaded here -->
+</div>
+
+<script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="scripts.js"></script>
+
+</body>
+</html>
