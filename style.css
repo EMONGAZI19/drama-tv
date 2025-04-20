@@ -149,37 +149,40 @@ video {
   background: #000;
 }
 
-/* Live Now Channel Grid (Vertical List, Small Size) */
-.channel-grid.live-now-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 30px;
-  align-items: center;
+/* Live Now: Horizontal Slider (New Design) */
+.live-carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: 30px 0;
 }
 
-/* Live Now Small Channel Style */
-.channel.small-channel {
+.live-carousel {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #1e1e1e;
-  border-radius: 6px;
-  padding: 6px 10px;
-  width: 90%;
-  max-width: 320px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  transition: transform 1s ease-in-out;
+  will-change: transform;
+}
+
+.live-carousel-item {
+  min-width: 33.33%;
+  background: #1e1e1e;
+  margin: 0 10px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.5s ease;
 }
 
-.channel.small-channel img {
-  width: 50px;
-  height: auto;
-  border-radius: 4px;
+.live-carousel-item img {
+  width: 100%;
+  border-radius: 6px;
 }
 
-.channel.small-channel span {
+.live-carousel-item span {
+  margin-top: 6px;
+  display: block;
   font-size: 13px;
-  font-weight: 500;
-  color: #fff;
 }
