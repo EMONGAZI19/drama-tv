@@ -13,18 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
       heading.textContent = category;
 
       const grid = document.createElement("div");
-      grid.className = (category === "Live Now") ? "live-now-list" : "channel-grid";
+      grid.className = (category === "Live Now") ? "channel-grid live-grid" : "channel-grid";
 
       channels[category].forEach((channel) => {
         const div = document.createElement("div");
-        div.className = (category === "Live Now") ? "channel live-channel" : "channel";
+        div.className = (category === "Live Now") ? "channel large" : "channel";
+
         div.onclick = () => {
           window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
         };
+
         div.innerHTML = `
-          <div style="position: relative;">
+          <div class="thumbnail-container">
             <img src="${channel.img}" alt="${channel.name}" />
-            ${channel.isLive ? '<span style="position:absolute;top:5px;left:5px;background:red;color:white;padding:2px 6px;font-size:12px;border-radius:4px;">LIVE</span>' : ''}
+            ${channel.isLive ? '<span class="live-badge">LIVE</span>' : ''}
           </div>
           <span>${channel.name}</span>
         `;
@@ -51,9 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
           };
           div.innerHTML = `
-            <div style="position: relative;">
+            <div class="thumbnail-container">
               <img src="${channel.img}" alt="${channel.name}" />
-              ${channel.isLive ? '<span style="position:absolute;top:5px;left:5px;background:red;color:white;padding:2px 6px;font-size:12px;border-radius:4px;">LIVE</span>' : ''}
+              ${channel.isLive ? '<span class="live-badge">LIVE</span>' : ''}
             </div>
             <span>${channel.name}</span>
           `;
