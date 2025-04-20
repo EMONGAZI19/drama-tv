@@ -50,6 +50,12 @@ const channels = {
     { name: "Kids 3", img: "https://via.placeholder.com/150x100?text=Kids+3", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
     { name: "Kids 4", img: "https://via.placeholder.com/150x100?text=Kids+4", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" }
   ],
+  "Music": [
+    { name: "Music 1", img: "https://i.postimg.cc/gkmGpTGt/20250416_220424.png", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Music 2", img: "https://via.placeholder.com/150x100?text=BD+8", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Music 3", img: "https://via.placeholder.com/150x100?text=BD+9", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Music 4", img: "https://via.placeholder.com/150x100?text=BD+10", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" }
+  ],
   "Sports": [
     { name: "Sports 1", img: "https://via.placeholder.com/150x100?text=Sports+1", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
     { name: "Sports 2", img: "https://via.placeholder.com/150x100?text=Sports+2", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
