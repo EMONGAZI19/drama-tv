@@ -46,6 +46,27 @@ if (window.location.pathname.includes("player.html")) {
     channels[category].forEach((channel) => {
       const div = document.createElement("div");
       div.className = "channel";
+
+      const container = document.getElementById("channels");
+
+for (const category in channels) {
+  const section = document.createElement("div");
+  section.innerHTML = `<h3>${category}</h3><div class="channel-grid"></div>`;
+  const grid = section.querySelector(".channel-grid");
+
+  channels[category].forEach(channel => {
+    const div = document.createElement("div");
+    div.className = "channel";
+    div.onclick = () => openPlayer(channel.url, category, channel.name, channel.img);
+    div.innerHTML = `
+      <img src="${channel.img}" alt="${channel.name}" />
+      <span>${channel.name}</span>
+    `;
+    grid.appendChild(div);
+  });
+
+  container.appendChild(section);
+}
       div.onclick = () => {
         window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}`;
       };
