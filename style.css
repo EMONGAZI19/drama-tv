@@ -1,10 +1,12 @@
 body {
-  background: #111;
+  background: #111 url('your-background.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
   font-family: sans-serif;
   margin: 0;
   padding: 0 10px;
 }
+
 .title {
   text-align: center;
   margin-top: 20px;
@@ -43,36 +45,40 @@ body {
   z-index: 9999;
 }
 
+/* Live Now Channel Layout */
 .channel-grid.live-grid {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  gap: 20px;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
 }
 
 .channel.large {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 15px;
-  background-color: #1a1a1a; /* Optional: gives a card-like feel */
+  gap: 12px;
+  background-color: #1a1a1a;
   border-radius: 10px;
   padding: 10px;
-  max-width: 500px; /* Restrict width to center nicely */
+  max-width: 400px;
   width: 100%;
 }
 
 .channel.large img {
-  width: 120px;
+  width: 100px;
   height: auto;
   border-radius: 6px;
 }
 
 .channel.large span {
-  font-size: 1rem;
+  font-size: 15px;
   font-weight: 600;
   color: #fff;
 }
+
+/* Spinner */
 .spinner {
   width: 60px;
   height: 60px;
@@ -88,6 +94,7 @@ body {
   }
 }
 
+/* Notice Bar */
 .notice-bar {
   background: linear-gradient(to right, #ff4e50, #f9d423);
   color: #fff;
@@ -108,17 +115,21 @@ body {
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
+/* Section Heading */
 h3 {
   border-left: 4px solid red;
   padding-left: 10px;
   margin-top: 30px;
 }
+
+/* Channel Grid */
 .channel-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin-bottom: 40px;
 }
+
 .channel {
   background: #1e1e1e;
   padding: 10px;
@@ -131,6 +142,7 @@ h3 {
   position: relative;
 }
 
+/* LIVE badge */
 .live-badge {
   position: absolute;
   top: 6px;
@@ -143,19 +155,26 @@ h3 {
   border-radius: 3px;
   z-index: 1;
 }
+
+/* Thumbnail image */
 .channel img {
   width: 100%;
   border-radius: 5px;
 }
+
+/* Channel name text */
 .channel span {
   display: block;
   margin-top: 8px;
   font-size: 14px;
 }
+
+/* Player page video */
 .player-container {
   max-width: 100%;
   margin: 20px auto;
 }
+
 video {
   width: 100%;
   max-height: 300px;
