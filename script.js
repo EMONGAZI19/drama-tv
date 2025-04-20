@@ -142,12 +142,15 @@ function animateLiveSlider() {
   let index = 0;
 
   function slideNext() {
-    if (index >= totalSlides - 3) return; // Stop before overflow
+    if (index >= totalSlides - 2) return; // Stop before overflow
 
+    // Make sure the width is correct to accommodate 3 items at once
+    slider.style.transition = "transform 1s ease-in-out";
     slider.style.transform = `translateX(-${index * 33.33}%)`; // Adjust slide width for 3 items
     index++;
     setTimeout(slideNext, 4000);
   }
 
-  setTimeout(slideNext, 4000); // Start after 4s
+  // Initialize sliding after 4 seconds
+  setTimeout(slideNext, 4000);
 }
