@@ -1,9 +1,9 @@
 const channels = {
   "Live Now": [
     {
-      name: "Live Match 1",
+      name: "Test 1",
       img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "http://link.luckonline.eu/bnf3aKTmLWEG/K86vSxB9quGd/597",
+      url: "https://stream4.xdevel.com/video6s975955-1777/stream/manifest.mpd",
       isLive: true
     },
     {
