@@ -1,54 +1,65 @@
 const channels = {
   "Live Now": [
     {
-      name: "PSL",
-      image: "https://i.postimg.cc/Wzdx0R6w/20250416-131233.png",
-      url: "https://example.com/stream1.m3u8"
+      name: "Live Match 1",
+      img: "https://via.placeholder.com/150x100?text=Live+1",
+      url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
     },
     {
-      name: "IPL 2025",
-      image: "https://i.postimg.cc/mkKJwdmf/20250416-130656.png",
-      url: "https://pol6.dunyapurkaraja.com:999/hls/star1in.m3u8?md5=ANjf67negXKTWGgA5NJwKg&expires=1745138035"
+      name: "Live Match 2",
+      img: "https://via.placeholder.com/150x100?text=Live+2",
+      url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+    },
+    {
+      name: "Live Match 3",
+      img: "https://via.placeholder.com/150x100?text=Live+3",
+      url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
     }
   ],
   "Bangladesh": [
-    {
-      name: "Jamuna TV",
-      image: "https://i.postimg.cc/gkmGpTGt/20250416_220424.png",
-      url: "http://38.96.178.201/live/JamunaTV/index.m3u8"
-    },
-    {
-      name: "Ekkator TV",
-      image: "https://i.postimg.cc/jjprF88X/20250416_215652.png",
-      url: "https://xstream-bd-xtv.tiiny.io/stream.php?id=1a7a1365-ae2c-470f-9fb2-25c6e83bb108&e=.m3u8"
-    }
+    { name: "BD Channel 1", img: "https://via.placeholder.com/150x100?text=BD+1", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 2", img: "https://via.placeholder.com/150x100?text=BD+2", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 3", img: "https://via.placeholder.com/150x100?text=BD+3", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 4", img: "https://via.placeholder.com/150x100?text=BD+4", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 5", img: "https://via.placeholder.com/150x100?text=BD+5", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 6", img: "https://via.placeholder.com/150x100?text=BD+6", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 7", img: "https://via.placeholder.com/150x100?text=BD+7", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 8", img: "https://via.placeholder.com/150x100?text=BD+8", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 9", img: "https://via.placeholder.com/150x100?text=BD+9", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 10", img: "https://via.placeholder.com/150x100?text=BD+10", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" }
   ],
   "Entertainment": [
-    {
-      name: "ATN Bangla",
-      image: "https://via.placeholder.com/150x100?text=ATN+Bangla",
-      url: "https://your.m3u8/link"
-    }
+    { name: "Entertainment 1", img: "https://via.placeholder.com/150x100?text=ENT+1", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Entertainment 2", img: "https://via.placeholder.com/150x100?text=ENT+2", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Entertainment 3", img: "https://via.placeholder.com/150x100?text=ENT+3", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Entertainment 4", img: "https://via.placeholder.com/150x100?text=ENT+4", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Entertainment 5", img: "https://via.placeholder.com/150x100?text=ENT+5", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Entertainment 6", img: "https://via.placeholder.com/150x100?text=ENT+6", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Entertainment 7", img: "https://via.placeholder.com/150x100?text=ENT+7", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" }
   ],
   "Indian Bangla": [
-    {
-      name: "Zee Bangla",
-      image: "https://via.placeholder.com/150x100?text=Zee+Bangla",
-      url: "https://your.m3u8/link"
-    }
+    { name: "Indian Bangla 1", img: "https://via.placeholder.com/150x100?text=IB+1", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Indian Bangla 2", img: "https://via.placeholder.com/150x100?text=IB+2", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Indian Bangla 3", img: "https://via.placeholder.com/150x100?text=IB+3", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Indian Bangla 4", img: "https://via.placeholder.com/150x100?text=IB+4", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Indian Bangla 5", img: "https://via.placeholder.com/150x100?text=IB+5", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" }
   ],
   "Kids": [
-    {
-      name: "Cartoon Network",
-      image: "https://via.placeholder.com/150x100?text=Cartoon+Network",
-      url: "https://your.m3u8/link"
-    }
+    { name: "Kids 1", img: "https://via.placeholder.com/150x100?text=Kids+1", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Kids 2", img: "https://via.placeholder.com/150x100?text=Kids+2", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Kids 3", img: "https://via.placeholder.com/150x100?text=Kids+3", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Kids 4", img: "https://via.placeholder.com/150x100?text=Kids+4", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" }
   ],
   "Sports": [
-    {
-      name: "Star Sports 1",
-      image: "https://via.placeholder.com/150x100?text=Star+Sports+1",
-      url: "https://your.m3u8/link"
-    }
+    { name: "Sports 1", img: "https://via.placeholder.com/150x100?text=Sports+1", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Sports 2", img: "https://via.placeholder.com/150x100?text=Sports+2", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Sports 3", img: "https://via.placeholder.com/150x100?text=Sports+3", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Sports 4", img: "https://via.placeholder.com/150x100?text=Sports+4", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Sports 5", img: "https://via.placeholder.com/150x100?text=Sports+5", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Sports 6", img: "https://via.placeholder.com/150x100?text=Sports+6", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Sports 7", img: "https://via.placeholder.com/150x100?text=Sports+7", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Sports 8", img: "https://via.placeholder.com/150x100?text=Sports+8", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Sports 9", img: "https://via.placeholder.com/150x100?text=Sports+9", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "Sports 10", img: "https://via.placeholder.com/150x100?text=Sports+10", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" }
   ]
 };
