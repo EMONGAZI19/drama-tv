@@ -50,35 +50,34 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 40px;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
 .channel.large {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background-color: #1a1a1a;
-  border-radius: 8px;
-  padding: 6px 10px;
-  max-width: 320px;
+  border-radius: 6px;
+  padding: 5px 8px;
+  max-width: 250px;
   width: 100%;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
 
 .channel.large img {
-  width: 60px;
+  width: 45px;
   height: auto;
   border-radius: 4px;
 }
 
 .channel.large span {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   color: #fff;
 }
-
 /* Spinner */
 .spinner {
   width: 60px;
