@@ -3,59 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Player - Drama World</title>
+  <title>Drama World Live</title>
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
   <style>
     body {
-      background: #111;
-      color: #fff;
-      font-family: sans-serif;
       margin: 0;
       padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     header {
-      background: #1e1e1e;
-      padding: 15px 10px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #ffcc00;
       text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      padding: 15px 10px;
+      background-color: #111;
+      color: #ffcc00;
       border-bottom: 2px solid red;
     }
 
     .player-container {
-      max-width: 800px;
-      margin: 20px auto 10px;
-      padding: 0 10px;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
     }
 
-    .channel-info-bottom {
+    .video-box {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .channel-overlay {
+      position: absolute;
+      bottom: 8px;
+      left: 10px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-top: 8px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 8px 12px;
+      border-radius: 8px;
     }
 
-    .channel-info-bottom img {
+    .channel-overlay img {
       width: 50px;
       height: 35px;
       object-fit: cover;
-      border-radius: 5px;
+      border-radius: 4px;
+      margin-right: 10px;
     }
 
-    .channel-info-bottom span {
+    .channel-overlay span {
       font-size: 16px;
       font-weight: bold;
+      color: #ffcc00;
     }
 
-    .related-channels {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 0 10px;
+    .related {
+      margin-top: 30px;
     }
 
-    .related-channels h3 {
+    .related h3 {
       color: #ffcc00;
       margin-bottom: 10px;
     }
@@ -63,25 +73,27 @@
     .related-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 15px;
+      gap: 12px;
     }
 
-    .related-grid .channel {
+    .channel {
       background: #222;
-      border-radius: 10px;
-      padding: 5px;
+      border-radius: 8px;
+      overflow: hidden;
       cursor: pointer;
+      padding: 5px;
+      text-align: center;
     }
 
-    .related-grid .channel img {
+    .channel img {
       width: 100%;
       border-radius: 5px;
     }
 
-    .related-grid .channel span {
-      font-size: 13px;
+    .channel span {
       display: block;
       margin-top: 5px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -89,18 +101,17 @@
   <header>Drama World Live</header>
 
   <div class="player-container">
-    <video id="player" controls autoplay></video>
-
-    <div class="channel-info-bottom">
-      <img id="channel-logo" src="" alt="Logo" />
-      <span id="channel-name">চ্যানেল লোড হচ্ছে...</span>
+    <div class="video-box">
+      <video id="player" controls autoplay></video>
+      <div class="channel-overlay">
+        <img id="channel-logo" src="" alt="Logo" />
+        <span id="channel-name">Loading...</span>
+      </div>
     </div>
-  </div>
 
-  <div class="related-channels">
-    <h3>Related Channels</h3>
-    <div class="related-grid" id="related-channels">
-      <!-- Related channels will load here -->
+    <div class="related">
+      <h3>Related Channels</h3>
+      <div class="related-grid" id="related-channels"></div>
     </div>
   </div>
 
@@ -124,14 +135,10 @@
       const hls = new Hls();
       hls.loadSource(streamUrl);
       hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, function () {
-        video.play();
-      });
+      hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = streamUrl;
-      video.addEventListener("loadedmetadata", function () {
-        video.play();
-      });
+      video.addEventListener("loadedmetadata", () => video.play());
     }
 
     const relatedContainer = document.getElementById("related-channels");
