@@ -12,25 +12,24 @@ body {
 
 
 .notice-bar {
-  background-color: #000;
-  color: #00ff00;
-  font-family: 'Courier New', monospace;
-  padding: 10px;
-  border: 2px dashed #00ff00;
-  margin: 20px 10px;
-  border-radius: 8px;
+.notice-bar {
+  background: linear-gradient(to right, #ff4e50, #f9d423);
+  color: #fff;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: bold;
   text-align: center;
-  animation: flicker 2s infinite;
+  border-top: 3px solid #ff0000;
+  border-bottom: 3px solid #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
 }
 
 .notice-bar marquee {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 
