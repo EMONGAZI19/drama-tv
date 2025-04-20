@@ -149,7 +149,7 @@ video {
   background: #000;
 }
 
-/* Live Now: Horizontal Slider (New Design) */
+/* Live Now: Horizontal Slider */
 .live-carousel-wrapper {
   overflow: hidden;
   position: relative;
@@ -211,4 +211,35 @@ video {
   outline: none;
   border-color: red;
   background-color: #333;
+}
+
+/* Quality Selector Dropdown Styling */
+.plyr__controls select {
+  appearance: none;
+  background-color: #1e1e1e;
+  color: #ffcc00;
+  padding: 6px 10px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.plyr__controls select:hover {
+  background-color: #292929;
+  border-color: red;
+}
+
+.plyr__controls select:focus {
+  outline: none;
+  border-color: #ffcc00;
+  background-color: #333;
+}
+
+.plyr__controls select::-ms-expand {
+  display: none;
 }
