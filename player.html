@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="player-container">
+    <h2 id="channel-name"></h2>
+    <video id="video-player" controls autoplay></video>
+    <h3>Related Channels</h3>
+    <div class="channel-grid" id="related-channels"></div>
+  </div>
+  <script src="channels.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const streamUrl = params.get("stream");
+    const name = params.get("name");
+    const category = params.get("category");
+
+    document.getElementById("channel-name").textContent = name;
+    const player = document.getElementById("video-player");
+    player.src = decodeURIComponent(streamUrl);
+
+    const related = channels.filter(ch => ch.category === category && ch.name !== name);
+    const relatedContainer = document.getElementById("related-channels");
+    related.forEach(ch => {
+      const div = document.createElement("div");
+      div.className = "channel-card";
+      div.innerHTML = `<img src="${ch.image}" alt="${ch.name}"><p>${ch.name}</p>`;
+      div.onclick = () => {
+        window.location.href = \`player.html?stream=\${encodeURIComponent(ch.stream)}&name=\${encodeURIComponent(ch.name)}&category=\${encodeURIComponent(ch.category)}\`;
+      };
+      relatedContainer.appendChild(div);
+    });
+  </script>
+</body>
+</html>
