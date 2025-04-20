@@ -1,40 +1,111 @@
 body {
-  background-color: #111;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
+    background: #111;
+    color: #fff;
+    font-family: sans-serif;
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 28px;
+.notice-bar {
+    background-color: #222;
+    color: #ffcc00;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    margin-bottom: 20px;
 }
 
 .channel-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 40px;
 }
 
 .channel {
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-.channel:hover {
-  transform: scale(1.03);
+    background: #1e1e1e;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
 }
 
 .channel img {
-  width: 100%;
-  display: block;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.channel span {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+video {
+    width: 100%;
+    max-height: 300px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+h3 {
+    border-left: 4px solid red;
+    padding-left: 10px;
+    margin: 30px 0 10px;
+    color: #f2f2f2;
+}
+
+.live-now-section {
+    margin-top: 30px;
+}
+
+.live-now-title {
+    font-size: 24px;
+    color: #f2f2f2;
+    border-left: 6px solid red;
+    padding-left: 12px;
+    margin-bottom: 20px;
+}
+
+.live-now-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.channel-live {
+    position: relative;
+    background: #1e1e1e;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.channel-live img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.channel-live span {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.live-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    z-index: 2;
+}  display: block;
 }
 
 .channel span {
