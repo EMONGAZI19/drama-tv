@@ -144,7 +144,7 @@ function animateLiveSlider() {
   function slideNext() {
     if (index >= totalSlides - 3) return; // Stop before overflow
 
-    slider.style.transform = `translateX(-${index * 150}px)`; // Adjust slide width
+    slider.style.transform = `translateX(-${index * 33.33}%)`; // Adjust slide width for 3 items
     index++;
     setTimeout(slideNext, 4000);
   }
