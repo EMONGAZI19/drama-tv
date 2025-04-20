@@ -13,16 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
       heading.textContent = category;
 
       const grid = document.createElement("div");
-      grid.className = (category === "Live Now") ? "channel-grid live-grid" : "channel-grid";
+      grid.className = "channel-grid";
+      if (category === "Live Now") {
+        grid.classList.add("live-now-grid");
+      }
 
       channels[category].forEach((channel) => {
         const div = document.createElement("div");
-        div.className = (category === "Live Now") ? "channel large" : "channel";
-
+        div.className = "channel";
+        if (category === "Live Now") {
+          div.classList.add("small-channel");
+        }
         div.onclick = () => {
           window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
         };
-
         div.innerHTML = `
           <div class="thumbnail-container">
             <img src="${channel.img}" alt="${channel.name}" />
