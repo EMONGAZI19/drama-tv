@@ -9,7 +9,7 @@
     body {
       background: #111;
       color: #fff;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
     }
@@ -32,23 +32,28 @@
     .channel-info {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin: 10px auto;
+      gap: 15px;
+      background: #1f1f1f;
+      padding: 12px 20px;
+      border-radius: 12px;
       max-width: 800px;
-      padding-left: 10px;
+      margin: 15px auto 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
 
     .channel-info img {
-      width: 50px;
-      height: 35px;
+      width: 55px;
+      height: 40px;
       object-fit: cover;
-      border-radius: 4px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
     }
 
     .channel-info span {
-      font-size: 16px;
-      font-weight: bold;
-      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffcc00;
+      text-shadow: 1px 1px 2px #000;
     }
 
     .related-channels {
@@ -142,7 +147,6 @@
       });
     }
 
-    // Load related channels from same category
     const relatedContainer = document.getElementById("related-channels");
     if (channels[category]) {
       channels[category]
