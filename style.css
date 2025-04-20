@@ -233,6 +233,7 @@ video {
 .plyr__menu__container::-webkit-scrollbar {
   width: 6px;
 }
+
 .plyr__menu__container::-webkit-scrollbar-thumb {
   background-color: #ff0000;
   border-radius: 4px;
