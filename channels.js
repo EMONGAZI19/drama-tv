@@ -2,23 +2,23 @@ const channels = {
   "Live Now": [
     {
       name: "Live Match 1",
-      img: "https://via.placeholder.com/150x100?text=Live+1",
+      img: "https://i.postimg.cc/gkmGpTGt/20250416_220424.png",
       url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
     },
     {
       name: "Live Match 2",
-      img: "https://via.placeholder.com/150x100?text=Live+2",
+      img: "https://i.postimg.cc/gkmGpTGt/20250416_220424.png",
       url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
     },
     {
       name: "Live Match 3",
-      img: "https://via.placeholder.com/150x100?text=Live+3",
+      img: "https://i.postimg.cc/gkmGpTGt/20250416_220424.png",
       url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
     }
   ],
   "Bangladesh": [
-    { name: "BD Channel 1", img: "https://via.placeholder.com/150x100?text=BD+1", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
-    { name: "BD Channel 2", img: "https://via.placeholder.com/150x100?text=BD+2", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 1", img: "https://i.postimg.cc/gkmGpTGt/20250416_220424.png", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { name: "BD Channel 2", img: "https://i.postimg.cc/gkmGpTGt/20250416_220424.png", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
     { name: "BD Channel 3", img: "https://via.placeholder.com/150x100?text=BD+3", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
     { name: "BD Channel 4", img: "https://via.placeholder.com/150x100?text=BD+4", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
     { name: "BD Channel 5", img: "https://via.placeholder.com/150x100?text=BD+5", url: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
