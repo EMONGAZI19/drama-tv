@@ -10,7 +10,6 @@
       background: #111;
       color: #fff;
       font-family: sans-serif;
-      text-align: center;
       margin: 0;
       padding: 0;
     }
@@ -22,47 +21,55 @@
       font-weight: bold;
       color: #ffcc00;
       border-bottom: 2px solid red;
-    }
-
-    .channel-info {
-      margin: 10px auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .channel-info img {
-      width: 60px;
-      height: 40px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-
-    .channel-info span {
-      font-size: 18px;
-      color: #fff;
+      text-align: center;
     }
 
     .player-container {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 20px auto 0;
+      position: relative;
+    }
+
+    .channel-info {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .channel-info img {
+      width: 50px;
+      height: 35px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .channel-info span {
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
     }
 
     .related-channels {
       margin-top: 30px;
+      padding: 0 10px;
     }
 
     .related-channels h3 {
       color: #ffcc00;
       margin-bottom: 10px;
+      text-align: center;
     }
 
     .related-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
       gap: 15px;
-      padding: 0 10px;
     }
 
     .related-grid .channel {
@@ -70,6 +77,11 @@
       border-radius: 10px;
       padding: 5px;
       cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .related-grid .channel:hover {
+      transform: scale(1.05);
     }
 
     .related-grid .channel img {
@@ -81,19 +93,20 @@
       font-size: 13px;
       display: block;
       margin-top: 5px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <header>Drama World Live</header>
 
-  <div class="channel-info">
-    <img id="channel-logo" src="" alt="Logo" />
-    <span id="channel-name">চ্যানেল লোড হচ্ছে...</span>
-  </div>
-
   <div class="player-container">
     <video id="player" controls autoplay></video>
+
+    <div class="channel-info">
+      <img id="channel-logo" src="" alt="Logo" />
+      <span id="channel-name">চ্যানেল লোড হচ্ছে...</span>
+    </div>
   </div>
 
   <div class="related-channels">
