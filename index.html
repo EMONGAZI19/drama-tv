@@ -20,16 +20,60 @@
       background: #1e1e1e;
       padding: 10px 20px;
       border-bottom: 2px solid red;
-    }
-
-    .menu-icon {
-      font-size: 24px;
-      cursor: pointer;
-      color: #fff;
+      position: relative;
     }
 
     .logo img {
-      height: 40px;
+      height: 45px;
+    }
+
+    .menu-icon {
+      font-size: 32px;
+      cursor: pointer;
+      color: #fff;
+      padding: 8px 12px;
+      background-color: #333;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .menu-icon:hover {
+      background-color: #444;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #222;
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 15px 20px;
+      z-index: 1000;
+      width: 180px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 0;
+      border-bottom: 1px solid #333;
+    }
+
+    .dropdown-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu a:hover {
+      color: #ffcc00;
     }
 
     .title {
@@ -45,58 +89,29 @@
       padding: 8px;
       font-size: 14px;
     }
-
-    /* Placeholder for dropdown */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 60px;
-      left: 10px;
-      background: #222;
-      border: 1px solid #444;
-      padding: 10px;
-      border-radius: 8px;
-    }
-
-    .dropdown-menu.show {
-      display: block;
-    }
-
-    .dropdown-menu a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      padding: 5px 0;
-    }
-
-    .dropdown-menu a:hover {
-      color: #ffcc00;
-    }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <div class="logo">
       <img src="https://i.imgur.com/zY7AvQ8.png" alt="Drama World Logo" />
     </div>
-  </div>
-
-  <div id="dropdown" class="dropdown-menu">
-    <!-- এখানে ক্যাটাগরিগুলো JS দিয়ে লোড করা যাবে -->
-    <a href="#Bangladeshi">Bangladeshi</a>
-    <a href="#Entertainment">Entertainment</a>
-    <a href="#Sports">Sports</a>
-    <a href="#Kids">Kids</a>
-    <a href="#Music">Music</a>
+    <div class="menu-icon" onclick="toggleMenu()">≡</div>
+    <div id="dropdown" class="dropdown-menu">
+      <a href="#Bangladeshi">Bangladeshi</a>
+      <a href="#Entertainment">Entertainment</a>
+      <a href="#Sports">Sports</a>
+      <a href="#Kids">Kids</a>
+      <a href="#Music">Music</a>
+    </div>
   </div>
 
   <h2 class="title">Drama World Live TV</h2>
 
   <div class="notice-bar">
     <marquee behavior="scroll" direction="left">
-      Welcome to DRAMA WORLD LIVE TV | আপডেট চলছে অপেক্ষা করুন | Thank You for Watching!
+      Welcome to DRAMA WORLD LIVE TV | চ্যানেলে ক্লিক করে কিছুক্ষন অপেক্ষা করুন প্লে হবে | আপডেট চলছে | Thank You for Watching!
     </marquee>
   </div>
 
