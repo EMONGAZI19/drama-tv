@@ -22,9 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
           window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
         };
         div.innerHTML = `
-          <img src="${channel.img}" alt="${channel.name}" />
-          <span>${channel.name}</span>
-        `;
+  <div style="position: relative;">
+    <img src="${channel.img}" alt="${channel.name}" />
+    ${channel.isLive ? '<span style="position:absolute;top:5px;left:5px;background:red;color:white;padding:2px 6px;font-size:12px;border-radius:4px;">LIVE</span>' : ''}
+  </div>
+  <span>${channel.name}</span>
+`;
         grid.appendChild(div);
       });
 
