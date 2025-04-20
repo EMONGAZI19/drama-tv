@@ -43,6 +43,19 @@ body {
   z-index: 9999;
 }
 
+.live-now-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.live-channel img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
 .spinner {
   width: 60px;
   height: 60px;
