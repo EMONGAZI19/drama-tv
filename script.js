@@ -13,37 +13,65 @@ document.addEventListener("DOMContentLoaded", () => {
       const heading = document.createElement("h3");
       heading.textContent = category;
 
-      const grid = document.createElement("div");
-      grid.className = "channel-grid";
+      let grid;
+
       if (category === "Live Now") {
-        grid.classList.add("live-now-grid");
+        // Create a wrapper for sliding effect
+        const sliderWrapper = document.createElement("div");
+        sliderWrapper.className = "live-slider-wrapper";
+
+        grid = document.createElement("div");
+        grid.className = "live-slider";
+
+        channels[category].forEach(channel => {
+          const div = document.createElement("div");
+          div.className = "channel small-channel";
+          div.onclick = () => {
+            window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
+          };
+          div.innerHTML = `
+            <div class="thumbnail-container">
+              <img src="${channel.img}" alt="${channel.name}" />
+              ${channel.isLive ? '<span class="live-badge">LIVE</span>' : ''}
+            </div>
+            <span>${channel.name}</span>
+          `;
+          grid.appendChild(div);
+        });
+
+        sliderWrapper.appendChild(grid);
+        section.appendChild(heading);
+        section.appendChild(sliderWrapper);
+        container.appendChild(section);
+      } else {
+        // Regular grid layout
+        grid = document.createElement("div");
+        grid.className = "channel-grid";
+
+        channels[category].forEach(channel => {
+          const div = document.createElement("div");
+          div.className = "channel";
+          div.onclick = () => {
+            window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
+          };
+          div.innerHTML = `
+            <div class="thumbnail-container">
+              <img src="${channel.img}" alt="${channel.name}" />
+              ${channel.isLive ? '<span class="live-badge">LIVE</span>' : ''}
+            </div>
+            <span>${channel.name}</span>
+          `;
+          grid.appendChild(div);
+        });
+
+        section.appendChild(heading);
+        section.appendChild(grid);
+        container.appendChild(section);
       }
-
-      channels[category].forEach(channel => {
-        const div = document.createElement("div");
-        div.className = "channel";
-        if (category === "Live Now") {
-          div.classList.add("small-channel");
-        }
-
-        div.onclick = () => {
-          window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
-        };
-
-        div.innerHTML = `
-          <div class="thumbnail-container">
-            <img src="${channel.img}" alt="${channel.name}" />
-            ${channel.isLive ? '<span class="live-badge">LIVE</span>' : ''}
-          </div>
-          <span>${channel.name}</span>
-        `;
-        grid.appendChild(div);
-      });
-
-      section.appendChild(heading);
-      section.appendChild(grid);
-      container.appendChild(section);
     }
+
+    // Start animation after rendering
+    animateLiveSlider();
   }
 
   function filterChannels(query) {
@@ -94,18 +122,32 @@ document.addEventListener("DOMContentLoaded", () => {
 // Scroll to top button
 const scrollBtn = document.getElementById("scrollToTopBtn");
 window.onscroll = () => {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    scrollBtn.style.display = "block";
-  } else {
-    scrollBtn.style.display = "none";
-  }
+  scrollBtn.style.display = (window.scrollY > 100) ? "block" : "none";
 };
 scrollBtn.onclick = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-// Dropdown toggle
 function toggleMenu() {
   const menu = document.getElementById("dropdown");
   menu.classList.toggle("show");
+}
+
+// Animate Live Slider
+function animateLiveSlider() {
+  const slider = document.querySelector(".live-slider");
+  if (!slider) return;
+
+  const totalSlides = slider.children.length;
+  let index = 0;
+
+  function slideNext() {
+    if (index >= totalSlides - 3) return; // Stop before overflow
+
+    slider.style.transform = `translateX(-${index * 150}px)`; // Adjust slide width
+    index++;
+    setTimeout(slideNext, 4000);
+  }
+
+  setTimeout(slideNext, 4000); // Start after 4s
 }
