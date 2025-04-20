@@ -215,10 +215,9 @@ video {
 
 /* Plyr Quality Dropdown Styling */
 .plyr__menu {
-  background-color: #1e1e1e;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  padding: 5px 0;
+  background-color: #1e1e1e !important;
+  border-radius: 10px !important;
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4) !important;
 }
 
 .plyr__menu__container {
@@ -227,7 +226,8 @@ video {
   color: #fff;
   max-height: 200px;
   overflow-y: auto;
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 5px 0;
 }
 
 .plyr__menu__container::-webkit-scrollbar {
@@ -244,18 +244,22 @@ video {
 }
 
 .plyr__control[role="menuitemradio"] {
-  color: #fff;
-  padding: 8px 16px;
-  transition: background-color 0.3s ease;
+  background-color: transparent !important;
+  color: #fff !important;
+  padding: 10px 16px !important;
+  transition: background-color 0.3s, color 0.3s !important;
+  font-weight: 500;
+  text-align: left;
 }
 
 .plyr__control[role="menuitemradio"]:hover {
-  background-color: #292929;
-  color: #ffcc00;
+  background-color: #ff0000 !important;
+  color: #fff !important;
 }
 
 .plyr__control[role="menuitemradio"][aria-checked="true"] {
-  background-color: #444;
-  color: #ffcc00;
-  font-weight: bold;
+  background-color: #292929 !important;
+  color: #ffcc00 !important;
+  font-weight: bold !important;
+  border-left: 4px solid red;
 }
