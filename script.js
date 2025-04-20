@@ -6,6 +6,7 @@ if (document.getElementById("channelContainer")) {
 
   for (const category in channels) {
     const section = document.createElement("div");
+    section.id = category; // Anchor link কাজ করার জন্য ID সেট
 
     const heading = document.createElement("h3");
     heading.textContent = category;
