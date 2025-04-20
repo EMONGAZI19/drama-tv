@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderAllChannels() {
     container.innerHTML = "";
+
     for (const category in channels) {
       const section = document.createElement("div");
       section.id = category;
@@ -13,20 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
       heading.textContent = category;
 
       const grid = document.createElement("div");
-      grid.className = "channel-grid";
-      if (category === "Live Now") {
-        grid.classList.add("live-now-grid");
-      }
+      grid.className = (category === "Live Now") ? "channel-grid live-now-grid" : "channel-grid";
 
       channels[category].forEach((channel) => {
         const div = document.createElement("div");
-        div.className = "channel";
-        if (category === "Live Now") {
-          div.classList.add("small-channel");
-        }
+        div.className = (category === "Live Now") ? "channel small-channel" : "channel";
+
         div.onclick = () => {
           window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
         };
+
         div.innerHTML = `
           <div class="thumbnail-container">
             <img src="${channel.img}" alt="${channel.name}" />
@@ -53,9 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (channel.name.toLowerCase().includes(query)) {
           const div = document.createElement("div");
           div.className = "channel";
+
           div.onclick = () => {
             window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
           };
+
           div.innerHTML = `
             <div class="thumbnail-container">
               <img src="${channel.img}" alt="${channel.name}" />
@@ -70,38 +69,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (resultGrid.children.length === 0) {
       container.innerHTML = `<p style="text-align:center; padding: 20px;">কোনো চ্যানেল পাওয়া যায়নি</p>`;
-    } else {
-      container.appendChild(resultGrid);
-    }
-  }
-
-  searchInput.addEventListener("input", function () {
-    const query = this.value.toLowerCase();
-    if (!query) {
-      renderAllChannels();
-    } else {
-      filterChannels(query);
-    }
-  });
-
-  if (loader) loader.style.display = "none";
-  renderAllChannels();
-});
-
-// Scroll to top button
-const scrollBtn = document.getElementById("scrollToTopBtn");
-window.onscroll = () => {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    scrollBtn.style.display = "block";
-  } else {
-    scrollBtn.style.display = "none";
-  }
-};
-scrollBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
-
-function toggleMenu() {
-  const menu = document.getElementById("dropdown");
-  menu.classList.toggle("show");
-}
