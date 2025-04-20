@@ -1,311 +1,38 @@
-<!-- Plyr & HLS.js -->
-<link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
-<script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drama World Live TV</title>
+    <link rel="stylesheet" href="style.css"> <!-- External CSS -->
+    <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script> <!-- Plyr.js -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script> <!-- HLS.js -->
+</head>
+<body>
 
-<style>
-  body {
-    background: #111;
-    color: #fff;
-    font-family: sans-serif;
-  }
-  .channel-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-bottom: 40px;
-  }
-  .channel {
-    background: #1e1e1e;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-  }
-  .channel img {
-    width: 100%;
-    border-radius: 5px;
-  }
-  .channel span {
-    display: block;
-    margin-top: 8px;
-    font-size: 14px;
-  }
-  video {
-    width: 100%;
-    max-height: 300px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-  }
-  h3 {
-    border-left: 4px solid red;
-    padding-left: 10px;
-    margin: 30px 0 10px;
-    color: #f2f2f2;
-  }
-</style>
+    <header>
+        <h1>Drama World Live TV</h1>
+        <nav>
+            <a href="#bangladesh">Bangladesh</a>
+            <a href="#entertainment">Entertainment</a>
+            <a href="#sports">Sports</a>
+        </nav>
+    </header>
 
-<h2 style="text-align:center;">Drama World Live TV</h2>
-
-
-<style>
-  .notice-bar {
-    background-color: #222;
-    color: #ffcc00;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    border-top: 2px solid red;
-    border-bottom: 2px solid red;
-    margin-bottom: 20px;
-  }
-
-  .notice-bar marquee {
-    white-space: nowrap;
-  }
-</style>
-
-<div class="notice-bar">
-  <marquee behavior="scroll" direction="left" scrollamount="5">
-    Welcome to DRAMA WORLD LIVE TV | চ্যানেলে ক্লিক করে কিছুক্ষন অপেক্ষা করুন প্লে হবে | আপডেট চলছে অপেক্ষা করুন | Thank You for Watching!
-  </marquee>
-</div>
-
-
-<video id="player" controls autoplay></video>
-
-<script>
-  const video = document.getElementById('player');
-  const hls = new Hls();
-  const player = new Plyr(video);
-
-  function playStream(url) {
-    hls.loadSource(url);
-    hls.attachMedia(video);
-    video.play();
-  }
-
-window.addEventListener('DOMContentLoaded', () => {
-  playStream('https://tv.bdixtv24.co/toffee/live.php?id=7e00fee81848&e=.m3u8');
-  
-});
-</script>
-
-
-<style>
-  /* Live Now Section */
-  .live-now-section {
-    margin-top: 30px;
-  }
-
-  .live-now-title {
-    font-size: 24px;
-    color: #f2f2f2;
-    border-left: 6px solid red;
-    padding-left: 12px;
-    margin-bottom: 20px;
-  }
-
-  .live-now-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .channel-live {
-    position: relative;
-    background: #1e1e1e;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: center;
-  }
-
-  .channel-live img {
-    width: 100%;
-    border-radius: 5px;
-  }
-
-  .channel-live span {
-    display: block;
-    margin-top: 8px;
-    font-size: 14px;
-    color: #fff;
-  }
-
-  .live-badge {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    background-color: red;
-    color: white;
-    font-size: 12px;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-weight: bold;
-    z-index: 2;
-  }
-</style>
-
-<!-- Live Now Section -->
-<div class="live-now-section">
-  <h3 class="live-now-title">Live Now</h3>
-  <div class="live-now-list">
-    <div class="channel-live" onclick="playStream('https://example.com/stream1.m3u8')">
-      <div class="live-badge">LIVE</div>
-      <img src="https://i.postimg.cc/Wzdx0R6w/20250416-131233.png" />
-      <span>PSL</span>
+    <div id="player-section">
+        <video id="player" controls autoplay></video>
     </div>
-    <div class="channel-live" onclick="playStream('https://pol6.dunyapurkaraja.com:999/hls/star1in.m3u8?md5=ANjf67negXKTWGgA5NJwKg&expires=1745138035')">
-      <div class="live-badge">LIVE</div>
-      <img src="https://i.postimg.cc/mkKJwdmf/20250416-130656.png" />
-      <span>IPL 2025 </span>
+
+    <div id="bangladesh" class="channel-grid">
+        <h2>Bangladesh Channels</h2>
+        <div class="channel" onclick="playStream('https://tv.bdixtv24.co/toffee/live.php?id=7e00fee81848&e=.m3u8')">
+            <img src="https://via.placeholder.com/150x100" alt="Jamuna TV" />
+            <span>Jamuna TV</span>
+        </div>
+        <!-- Add more channels as required -->
     </div>
-    <div class="channel-live" onclick="playStream('https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1709/output/master.m3u8')">
-      <div class="live-badge">LIVE</div>
-      <img src="https://i.postimg.cc/D0xhkQXv/20250420-103455.png" />
-      <span>Bangladesh VS Zimbabwe</span>
-    </div>
-  </div>
-</div>
 
-<h3>Bangladesh</h3>
-<div class="channel-grid">
-  <!-- Bangladesh Channels -->
-  <div class="channel" onclick="playStream('http://38.96.178.201/live/JamunaTV/index.m3u8')">
-    <img src="https://i.postimg.cc/gkmGpTGt/20250416_220424.png" />
-    <span>Jamuna TV</span>
-  </div>
-  <div class="channel" onclick="playStream('https://xstream-bd-xtv.tiiny.io/stream.php?id=1a7a1365-ae2c-470f-9fb2-25c6e83bb108&e=.m3u8')">
-    <img src="https://i.postimg.cc/jjprF88X/20250416_215652.png" />
-    <span>Ekkator TV</span>
-  </div>
-  <div class="channel" onclick="playStream('https://xstream-bd-xtv.tiiny.io/stream.php?id=27ec4394-7640-4dab-abf8-6a48893dfdfe&e=.m3u8')">
-    <img src="https://i.postimg.cc/fRgsxWm1/20250416_215835.png" />
-    <span>Somoy TV</span>
-  </div>
-  <div class="channel" onclick="playStream('https://xstream-bd-xtv.tiiny.io/stream.php?id=89247cb9-3c3e-465c-bbc7-d444b0d65424&e=.m3u8')">
-    <img src="https://i.postimg.cc/3R2H5gVH/20250416_215609.png" />
-    <span>Channel 24</span>
-  </div>
-  <div class="channel" onclick="playStream('https://xstream-bd-xtv.tiiny.io/stream.php?id=0875f2c8-2043-499b-9472-2872412a6340&e=.m3u8')">
-    <img src="https://i.postimg.cc/DZktgSZp/20250416-214649.png" />
-    <span>DBC News</span>
-  </div>
-  <div class="channel" onclick="playStream('https://xstream-bd-xtv.tiiny.io/stream.php?id=d07563b0-7580-4cbd-a7c9-e67535c0164a&e=.m3u8')">
-    <img src="https://i.postimg.cc/rsJXzqqn/20250416-215234.png" />
-    <span>SATV </span>
-  </div>
-  <div class="channel" onclick="playStream('https://xstream-bd-xtv.tiiny.io/stream.php?id=1a2c8ec3-61d5-4355-80e2-fc3c9b178a0d&e=.m3u8')">
-    <img src="https://i.postimg.cc/xjyS63Lv/20250416-215443.png" />
-    <span>NTV</span>
-  </div>
-  <div class="channel" onclick="playStream('https://xstream-bd-xtv.tiiny.io/stream.php?id=21e75798-3b6a-4214-9d93-b3fecaa4e700&e=.m3u8')">
-    <img src="https://i.postimg.cc/qq0HkNH6/20250416-215408.png" />
-    <span>Bangla Vision</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=GTV" />
-    <span>GTV</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Ekushey+TV" />
-    <span>Ekushey TV</span>
-  </div>
-  <!-- Add more Bangladesh Channels as needed -->
-</div>
+    <script src="script.js"></script> <!-- External JS -->
 
-<h3>Entertainment</h3>
-<div class="channel-grid">
-  <!-- Entertainment Channels -->
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=ATN+Bangla" />
-    <span>ATN Bangla</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Zee+Bangla" />
-    <span>Zee Bangla</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Sony+Entertainment" />
-    <span>Sony Entertainment</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Colors+TV" />
-    <span>Colors TV</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Star+Plus" />
-    <span>Star Plus</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=MTV" />
-    <span>MTV</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Comedy+Central" />
-    <span>Comedy Central</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Star+World" />
-    <span>Star World</span>
-  </div>
-  <!-- Add more Entertainment Channels as needed -->
-</div>
-
-<h3>Indian Bangla</h3>
-<div class="channel-grid">
-  <!-- Indian Bangla Channels -->
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Zee+Bangla" />
-    <span>Zee Bangla</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Star+Jalsa" />
-    <span>Star Jalsa</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Sony+Sab" />
-    <span>Sony Sab</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Colors+Bangla" />
-    <span>Colors Bangla</span>
-  </div>
-  <!-- Add more Indian Bangla Channels as needed -->
-</div>
-
-<h3>Kids</h3>
-<div class="channel-grid">
-  <!-- Kids Channels -->
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Cartoon+Network" />
-    <span>Cartoon Network</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Disney+Channel" />
-    <span>Disney Channel</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Nickelodeon" />
-    <span>Nickelodeon</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=Boomerang" />
-    <span>Boomerang</span>
-  </div>
-</div>
-
-<h3>Music</h3>
-<div class="channel-grid">
-  <!-- Music Channels -->
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=MTV" />
-    <span>MTV</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="https://via.placeholder.com/150x100?text=VH1" />
-    <span>VH1</span>
-  </div>
-  <div class="channel" onclick="playStream('https://your.m3u8/link')">
-    <img src="
+</body>
+</html>
