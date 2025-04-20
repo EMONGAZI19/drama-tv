@@ -13,23 +13,24 @@ body {
 
 .notice-bar {
 .notice-bar {
-  background: linear-gradient(to right, #ff4e50, #f9d423);
+  background: #111;
   color: #fff;
   padding: 12px 0;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  border-top: 3px solid #ff0000;
-  border-bottom: 3px solid #ff0000;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  border-top: 2px solid #ff00cc;
+  border-bottom: 2px solid #00ffff;
+  box-shadow: 0 0 10px #ff00cc, 0 0 20px #00ffff;
   position: relative;
   overflow: hidden;
 }
 
 .notice-bar marquee {
+  color: #ffffff;
+  text-shadow: 0 0 5px #ff00cc, 0 0 10px #00ffff;
   font-family: 'Segoe UI', sans-serif;
   letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
 
