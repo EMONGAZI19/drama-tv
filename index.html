@@ -20,37 +20,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-<script src="channels.js"></script>
-<script>
-  function openPlayer(url, category, name, logo) {
-    const encodedUrl = encodeURIComponent(url);
-    const encodedCategory = encodeURIComponent(category);
-    const encodedName = encodeURIComponent(name);
-    const encodedLogo = encodeURIComponent(logo);
-    window.location.href = `player.html?stream=${encodedUrl}&category=${encodedCategory}&name=${encodedName}&logo=${encodedLogo}`;
-  }
-
-  const container = document.body;
-
-  for (const category in channels) {
-    const sectionTitle = document.createElement('h3');
-    sectionTitle.textContent = category;
-    container.appendChild(sectionTitle);
-
-    const grid = document.createElement('div');
-    grid.className = 'channel-grid';
-
-    channels[category].forEach(channel => {
-      const div = document.createElement('div');
-      div.className = 'channel';
-      div.onclick = () => openPlayer(channel.url, category, channel.name, channel.img);
-      div.innerHTML = `
-        <img src="${channel.img}" alt="${channel.name}" />
-        <span>${channel.name}</span>
-      `;
-      grid.appendChild(div);
-    });
-
-    container.appendChild(grid);
-  }
-</script>
