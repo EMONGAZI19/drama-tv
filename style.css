@@ -43,29 +43,35 @@ body {
   z-index: 9999;
 }
 
-.live-now-list {
+.channel-grid.live-grid {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center; /* Center horizontally */
+  gap: 20px;
 }
 
-.live-channel img {
+.channel.large {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  background-color: #1a1a1a; /* Optional: gives a card-like feel */
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 500px; /* Restrict width to center nicely */
   width: 100%;
-  max-width: 250px; /* আগে 400px ছিল, এখন আরও ছোট */
+}
+
+.channel.large img {
+  width: 120px;
   height: auto;
-  border-radius: 8px;
-  object-fit: cover;
+  border-radius: 6px;
 }
 
-.live-channel {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.live-channel span {
-  font-size: 14px;
-  margin-top: 4px;
+.channel.large span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
 }
 .spinner {
   width: 60px;
