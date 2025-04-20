@@ -1,9 +1,9 @@
 const channels = {
   "Live Now": [
     {
-      name: "Test 1",
+      name: "Test ",
       img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "https://stream4.xdevel.com/video6s975955-1777/stream/manifest.mpd",
+      url: "http://aktv_stream.m16tv.cfd/stream/tuntun/astrofootball/AKTV.m3u8",
       isLive: true
     },
     {
