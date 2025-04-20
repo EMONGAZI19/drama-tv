@@ -46,14 +46,14 @@ body {
 .live-now-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .live-channel img {
   width: 100%;
-  max-width: 400px; /* আগে ছিল 600px, এখন ছোট করলাম */
+  max-width: 250px; /* আগে 400px ছিল, এখন আরও ছোট */
   height: auto;
-  border-radius: 10px;
+  border-radius: 8px;
   object-fit: cover;
 }
 
@@ -61,6 +61,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.live-channel span {
+  font-size: 14px;
+  margin-top: 4px;
 }
 .spinner {
   width: 60px;
