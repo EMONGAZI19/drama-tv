@@ -186,8 +186,17 @@
       if (shaka.Player.isBrowserSupported()) {
         const player = new shaka.Player(video);
 
+        // Enable Adaptive Bitrate (ABR)
+        player.configure({
+          abr: { enabled: true },
+          streaming: {
+            bufferingGoal: 15,
+            rebufferingGoal: 5
+          }
+        });
+
         try {
-          await player.load(streamUrl);
+          await player.load(streamUrl); // Load HLS or DASH
           video.play();
         } catch (e) {
           console.error("Error loading stream:", e);
@@ -221,7 +230,7 @@
         });
     }
 
-    // Populate dropdown
+    // Dropdown toggle
     const categoryMenu = document.getElementById("categoryMenu");
     for (const cat in channels) {
       const a = document.createElement("a");
