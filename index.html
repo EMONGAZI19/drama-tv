@@ -82,6 +82,53 @@
       padding: 8px;
       font-size: 14px;
     }
+
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+      padding: 10px 20px;
+    }
+
+    .channel {
+      background: #222;
+      border-radius: 10px;
+      padding: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      text-align: center;
+    }
+
+    .channel:hover {
+      transform: scale(1.05);
+    }
+
+    .channel img {
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .channel span {
+      margin-top: 5px;
+      display: block;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .search-box {
+      padding: 10px 20px;
+      background: #111;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -103,8 +150,12 @@
 
   <div class="notice-bar">
     <marquee behavior="scroll" direction="left">
-      Welcome Rayhan Sir| ওয়েবসাইট আপডেট চলছে দেখুন কেমন হয়েছে | Thank You for Watching!
+      Welcome Rayhan Sir | ওয়েবসাইট আপডেট চলছে দেখুন কেমন হয়েছে | Thank You for Watching!
     </marquee>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="চ্যানেল খুঁজুন..." />
   </div>
 
   <div id="channelContainer"></div>
