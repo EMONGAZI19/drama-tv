@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="bn">
+<!DOCTYPE html>
+<html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,177 +11,174 @@
       background: #111;
       color: #fff;
       font-family: sans-serif;
-    }.loader-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
+    }
+    .loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(255, 255, 255, 0.2);
+      border-top-color: red;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
 
-.spinner {
-  width: 60px;
-  height: 60px;
-  border: 6px solid rgba(255, 255, 255, 0.2);
-  border-top-color: red;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      font-size: 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    #scrollToTopBtn:hover {
+      background-color: #ff3333;
+    }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e1e1e;
+      padding: 10px 20px;
+      border-bottom: 2px solid red;
+      position: relative;
+    }
 
-#scrollToTopBtn {
-  position: fixed;
-  bottom: 25px;
-  right: 20px;
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 12px 16px;
-  font-size: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
+    .logo img {
+      height: 45px;
+    }
 
-#scrollToTopBtn:hover {
-  background-color: #ff3333;
-}
+    .menu-icon {
+      font-size: 32px;
+      cursor: pointer;
+      color: #fff;
+      padding: 8px 12px;
+      background-color: #333;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #1e1e1e;
-  padding: 10px 20px;
-  border-bottom: 2px solid red;
-  position: relative;
-}
+    .menu-icon:hover {
+      background-color: #444;
+    }
 
-.logo img {
-  height: 45px;
-}
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #222;
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 15px 20px;
+      z-index: 1000;
+      width: 180px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
 
-.menu-icon {
-  font-size: 32px;
-  cursor: pointer;
-  color: #fff;
-  padding: 8px 12px;
-  background-color: #333;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
+    .dropdown-menu.show {
+      display: block;
+    }
 
-.menu-icon:hover {
-  background-color: #444;
-}
+    .dropdown-menu a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 0;
+      border-bottom: 1px solid #333;
+    }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background: #222;
-  border: 1px solid #444;
-  border-radius: 10px;
-  padding: 15px 20px;
-  z-index: 1000;
-  width: 180px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
+    .dropdown-menu a:last-child {
+      border-bottom: none;
+    }
 
-.dropdown-menu.show {
-  display: block;
-}
+    .dropdown-menu a:hover {
+      color: #ffcc00;
+    }
 
-.dropdown-menu a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px 0;
-  border-bottom: 1px solid #333;
-}
+    .notice-bar {
+      background: #333;
+      color: #ffcc00;
+      padding: 8px;
+      font-size: 14px;
+    }
 
-.dropdown-menu a:last-child {
-  border-bottom: none;
-}
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+      padding: 10px 20px;
+    }
 
-.dropdown-menu a:hover {
-  color: #ffcc00;
-}
+    .channel {
+      background: #222;
+      border-radius: 10px;
+      padding: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      text-align: center;
+    }
 
-.notice-bar {
-  background: #333;
-  color: #ffcc00;
-  padding: 8px;
-  font-size: 14px;
-}
+    .channel:hover {
+      transform: scale(1.05);
+    }
 
-.channel-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 15px;
-  padding: 10px 20px;
-}
+    .channel img {
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+    }
 
-.channel {
-  background: #222;
-  border-radius: 10px;
-  padding: 8px;
-  cursor: pointer;
-  transition: transform 0.2s;
-  text-align: center;
-}
+    .channel span {
+      margin-top: 5px;
+      display: block;
+      color: #fff;
+      font-size: 14px;
+    }
 
-.channel:hover {
-  transform: scale(1.05);
-}
+    .search-box {
+      padding: 10px 20px;
+      background: #111;
+    }
 
-.channel img {
-  width: 100%;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-.channel span {
-  margin-top: 5px;
-  display: block;
-  color: #fff;
-  font-size: 14px;
-}
-
-.search-box {
-  padding: 10px 20px;
-  background: #111;
-}
-
-#searchInput {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-}
-
+    #searchInput {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
   </style>
 </head>
 <body>
   <div id="loader" class="loader-wrapper">
     <div class="spinner"></div>
-  </div>  <div class="header">
+  </div>
+
+  <div class="header">
     <div class="logo">
       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgvvU0OLi3VZCQAUnQCaLKPzvjX8JKHB7h6-eHbILeVcRKado9TSMmQhgcJGx91XzJGDb-iIU2WH-VpVFB_peOjdG_kjHsjXEqveY91xL2t8x9u521L7SOuwBdxzZvrq16tXIwJR0yBRlIDaLT3MBAXYgZiFsutn7yX6XdEhvexOtRRED-flSHNSbHTaqMI=s150" alt="Drama World Logo" />
     </div>
@@ -193,39 +191,22 @@
       <a href="#Kids">Kids</a>
       <a href="#Music">Music</a>
     </div>
-  </div>  <div class="notice-bar">
+  </div>
+
+  <div class="notice-bar">
     <marquee behavior="scroll" direction="left" scrollamount="5">
       Welcome Rayhan Sir | ওয়েবসাইট আপডেট চলছে, দেখে বলুন কেমন হয়েছে | Enjoy the live stream on Drama World BD!
     </marquee>
-  </div>  <div class="search-box">
+  </div>
+
+  <div class="search-box">
     <input type="text" id="searchInput" placeholder="চ্যানেল খুঁজুন..." />
-  </div>  <div id="channelContainer"></div><button id="scrollToTopBtn" title="Go to top">↑</button>
+  </div>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("dropdown");
-      menu.classList.toggle("show");
-    }
+  <div id="channelContainer"></div>
+  <button id="scrollToTopBtn" title="Go to top">↑</button>
 
-    // Loader Hide
-    window.addEventListener("load", () => {
-      const loader = document.getElementById("loader");
-      if (loader) {
-        loader.style.display = "none";
-      }
-    });
-
-    // Scroll to Top
-    const scrollBtn = document.getElementById("scrollToTopBtn");
-    window.onscroll = () => {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollBtn.style.display = "block";
-      } else {
-        scrollBtn.style.display = "none";
-      }
-    };
-    scrollBtn.onclick = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-  </script>  <script src="channels.js"></script>  <script src="script.js"></script></body>
+  <script src="channels.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
