@@ -12,12 +12,7 @@ const channels = {
       url: "http://kst.moonplex.net:8080/CH3/index.m3u8",
       isLive: true
     },
-    {
-      name: "Live Match 3",
-      img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "http://kst.moonplex.net:8080/CH3/index.m3u8",
-      isLive: true
-    }
+  
   ],
   "Bangladesh": [
     { name: "BD Channel 1", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
@@ -38,14 +33,16 @@ const channels = {
     { name: "Entertainment 4", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Entertainment 5", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Entertainment 6", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
-    { name: "Entertainment 7", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false }
+    { name: "Entertainment 7", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
+    { name: "Entertainment 8", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false }
   ],
   "Indian Bangla": [
     { name: "Indian Bangla 1", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Indian Bangla 2", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Indian Bangla 3", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Indian Bangla 4", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
-    { name: "Indian Bangla 5", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false }
+    { name: "Indian Bangla 5", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
+    { name: "Indian Bangla 6", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false }
   ],
   "Kids": [
     { name: "Kids 1", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
