@@ -1,21 +1,23 @@
 {
   "name": "Drama World Live TV",
-  "short_name": "DramaTV",
+  "short_name": "Drama World",
+  "description": "Watch live Bengali TV channels and more.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
+  "background_color": "#111",
   "theme_color": "#ff0000",
-  "orientation": "portrait",
   "icons": [
     {
-      "src": "https://blogger.googleusercontent.com/img/a/AVvXsEgvvU0OLi3VZCQAUnQCaLKPzvjX8JKHB7h6-eHbILeVcRKado9TSMmQhgcJGx91XzJGDb-iIU2WH-VpVFB_peOjdG_kjHsjXEqveY91xL2t8x9u521L7SOuwBdxzZvrq16tXIwJR0yBRlIDaLT3MBAXYgZiFsutn7yX6XdEhvexOtRRED-flSHNSbHTaqMI=s150",
-      "sizes": "192x192",
+      "src": "https://i.postimg.cc/4dGb3sYy/IMG-20250413-123155-054.jpg",
+      "sizes": "150x150",
       "type": "image/png"
     },
     {
-      "src": "https://blogger.googleusercontent.com/img/a/AVvXsEgvvU0OLi3VZCQAUnQCaLKPzvjX8JKHB7h6-eHbILeVcRKado9TSMmQhgcJGx91XzJGDb-iIU2WH-VpVFB_peOjdG_kjHsjXEqveY91xL2t8x9u521L7SOuwBdxzZvrq16tXIwJR0yBRlIDaLT3MBAXYgZiFsutn7yX6XdEhvexOtRRED-flSHNSbHTaqMI=s150",
-      "sizes": "512x512",
+      "src": "https://i.postimg.cc/4dGb3sYy/IMG-20250413-123155-054.jpg",
+      "sizes": "192x192",
       "type": "image/png"
     }
-  ]
+  ],
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false
 }
