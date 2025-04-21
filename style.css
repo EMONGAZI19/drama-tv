@@ -35,30 +35,33 @@ body {
   background-color: #ff3333;
 }
 
-/* Header Layout */
-.header {
+/* Loader Spinner */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 15px 20px;
-  background-color: #000;
-  position: relative;
   z-index: 9999;
 }
 
-.logo img {
-  height: 45px;
-  max-width: 100%;
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top-color: red;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-/* Menu Icon */
-.menu-icon {
-  font-size: 28px;
-  cursor: pointer;
-  color: #fff;
-  user-select: none;
-  position: relative;
-  z-index: 10000;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Notice Bar */
@@ -74,7 +77,6 @@ body {
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
-  z-index: 10;
 }
 
 .notice-bar marquee {
@@ -135,67 +137,6 @@ h3 {
   z-index: 1;
 }
 
-/* Live Now Section */
-.live-now {
-  margin: 30px 0;
-  padding: 0 15px;
-}
-
-.live-now h2 {
-  color: #fff;
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-
-/* Swiper Integration */
-.live-swiper {
-  overflow: hidden;
-  padding-bottom: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.live-swiper .swiper-wrapper {
-  display: flex;
-  align-items: stretch;
-}
-
-.live-swiper .swiper-slide {
-  width: auto;
-  flex-shrink: 0;
-  background: #1e1e1e;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-.live-swiper .swiper-slide:hover {
-  transform: scale(1.05);
-}
-
-.live-swiper .swiper-slide img {
-  width: 200px;
-  height: 120px;
-  object-fit: cover;
-  display: block;
-}
-
-.live-swiper .swiper-slide .channel-name {
-  padding: 10px;
-  color: #fff;
-  font-size: 1em;
-  text-align: center;
-}
-
-/* Restrict Swiper Reset */
-.live-swiper .swiper,
-.live-swiper .swiper-wrapper,
-.live-swiper .swiper-slide {
-  all: unset;
-  display: revert;
-}
-
 /* Player Container */
 .player-container {
   max-width: 100%;
@@ -208,7 +149,7 @@ video {
   background: #000;
 }
 
-/* Live Carousel Fallback */
+/* Live Now: Horizontal Slider */
 .live-carousel-wrapper {
   overflow: hidden;
   position: relative;
@@ -324,7 +265,6 @@ video {
   border-left: 4px solid red;
 }
 
-/* Footer */
 .footer {
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
