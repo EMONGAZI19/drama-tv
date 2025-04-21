@@ -1,19 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-});
-window.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("loader");
   const container = document.getElementById("channelContainer");
-
-  channels.forEach(channel => {
-    const div = document.createElement("div");
-    div.className = "channel-card";
-    div.innerHTML = `
-      <a href="${channel.url}">
-        <img src="${channel.image}" alt="${channel.name}">
-        <h3>${channel.name}</h3>
-      </a>
-    `;
-    container.appendChild(div);
-  });
   const searchInput = document.getElementById("searchInput");
 
   function renderAllChannels() {
@@ -25,43 +12,38 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const heading = document.createElement("h3");
       heading.textContent = category;
-      section.appendChild(heading);
+
+      let grid;
 
       if (category === "Live Now") {
-        const swiperWrapper = document.createElement("div");
-        swiperWrapper.className = "swiper";
+        const sliderWrapper = document.createElement("div");
+        sliderWrapper.className = "live-slider-wrapper";
 
-        const swiperContainer = document.createElement("div");
-        swiperContainer.className = "swiper-wrapper";
+        grid = document.createElement("div");
+        grid.className = "live-slider";
 
         channels[category].forEach(channel => {
-          const slide = document.createElement("div");
-          slide.className = "swiper-slide";
-          slide.innerHTML = `
-            <div class="channel small-channel" onclick="window.location.href='player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}'">
-              <div class="thumbnail-container">
-                <img src="${channel.img}" alt="${channel.name}" />
-                ${channel.isLive ? '<span class="live-badge">LIVE</span>' : ''}
-              </div>
-              <span>${channel.name}</span>
+          const div = document.createElement("div");
+          div.className = "channel small-channel";
+          div.onclick = () => {
+            window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
+          };
+          div.innerHTML = `
+            <div class="thumbnail-container">
+              <img src="${channel.img}" alt="${channel.name}" />
+              ${channel.isLive ? '<span class="live-badge">LIVE</span>' : ''}
             </div>
+            <span>${channel.name}</span>
           `;
-          swiperContainer.appendChild(slide);
+          grid.appendChild(div);
         });
 
-        swiperWrapper.appendChild(swiperContainer);
-
-        // Optional Navigation
-        const nextBtn = document.createElement("div");
-        const prevBtn = document.createElement("div");
-        nextBtn.className = "swiper-button-next";
-        prevBtn.className = "swiper-button-prev";
-        swiperWrapper.appendChild(prevBtn);
-        swiperWrapper.appendChild(nextBtn);
-
-        section.appendChild(swiperWrapper);
+        sliderWrapper.appendChild(grid);
+        section.appendChild(heading);
+        section.appendChild(sliderWrapper);
+        container.appendChild(section);
       } else {
-        const grid = document.createElement("div");
+        grid = document.createElement("div");
         grid.className = "channel-grid";
 
         channels[category].forEach(channel => {
@@ -80,13 +62,13 @@ window.addEventListener("DOMContentLoaded", () => {
           grid.appendChild(div);
         });
 
+        section.appendChild(heading);
         section.appendChild(grid);
+        container.appendChild(section);
       }
-
-      container.appendChild(section);
     }
 
-    initializeSwiper();
+    animateLiveSlider();
   }
 
   function filterChannels(query) {
@@ -130,6 +112,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  if (loader) loader.style.display = "none";
   renderAllChannels();
 });
 
@@ -147,26 +130,22 @@ function toggleMenu() {
   menu.classList.toggle("show");
 }
 
-// Initialize Swiper.js after DOM is updated
-function initializeSwiper() {
-  new Swiper(".swiper", {
-    slidesPerView: 1.5,
-    spaceBetween: 15,
-    loop: false,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2.5,
-      },
-      768: {
-        slidesPerView: 3.5,
-      },
-      1024: {
-        slidesPerView: 4.5,
-      },
-    },
-  });
+// Animate Live Slider
+function animateLiveSlider() {
+  const slider = document.querySelector(".live-slider");
+  if (!slider) return;
+
+  const totalSlides = slider.children.length;
+  let index = 0;
+
+  function slideNext() {
+    if (index >= totalSlides - 2) return;
+
+    slider.style.transition = "transform 1s ease-in-out";
+    slider.style.transform = `translateX(-${index * 33.33}%)`;
+    index++;
+    setTimeout(slideNext, 4000);
+  }
+
+  setTimeout(slideNext, 4000);
 }
