@@ -12,14 +12,6 @@
     <div class="spinner"></div>
   </div>
 
-  <!-- Header Wrapper -->
-  <!-- Notice Bar -->
-  <div class="notice-bar">
-    <marquee behavior="scroll" direction="left" scrollamount="5">
-      Welcome Drama World BD | Now Website is updating for better experience | Enjoy the live stream on Drama World BD!
-    </marquee>
-  </div>
-
   <!-- Header -->
   <header class="header">
     <div class="logo">
@@ -32,11 +24,18 @@
   <nav id="dropdown" class="dropdown-menu">
     <a href="#Bangladeshi">Bangladeshi</a>
     <a href="#Entertainment">Entertainment</a>
-    <a href="#Indian Bangla">Indian Bangla</a>
+    <a href="#IndianBangla">Indian Bangla</a>
     <a href="#Sports">Sports</a>
     <a href="#Kids">Kids</a>
     <a href="#Music">Music</a>
   </nav>
+
+  <!-- Notice Bar -->
+  <div class="notice-bar">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      Welcome Drama World BD | Now Website is updating for better experience | Enjoy the live stream on Drama World BD!
+    </marquee>
+  </div>
 
   <!-- Search Box -->
   <div class="search-box">
@@ -57,13 +56,10 @@
   <div id="channelContainer"></div>
   <button id="scrollToTopBtn" title="Go to top">↑</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="channels.js"></script>
-  <script src="script.js"></script>
-
   <footer class="footer">
     <div class="footer-inner">
       <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgvvU0OLi3VZCQAUnQCaLKPzvjX8JKHB7h6-eHbILeVcRKado9TSMmQhgcJGx91XzJGDb-iIU2WH-VpVFB_peOjdG_kjHsjXEqveY91xL2t8x9u521L7SOuwBdxzZvrq16tXIwJR0yBRlIDaLT3MBAXYgZiFsutn7yX6XdEhvexOtRRED-flSHNSbHTaqMI=s150" alt="Drama World Logo" class="footer-logo">
+
       <p class="footer-description">
         Drama World — বিনোদনের এক অনন্য প্ল্যাটফর্ম যেখানে আপনি সবকিছু এক জায়গায় পান।
       </p>
@@ -91,6 +87,10 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="channels.js"></script>
+  <script src="script.js"></script>
   <script>
     const swiper = new Swiper('.swiper', {
       slidesPerView: 3,
@@ -113,8 +113,8 @@
     });
 
     function toggleMenu() {
-      const dropdown = document.getElementById("dropdown");
-      dropdown.classList.toggle("show");
+      const dropdown = document.getElementById('dropdown');
+      dropdown.classList.toggle('show');
     }
   </script>
 </body>
