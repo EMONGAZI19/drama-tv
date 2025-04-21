@@ -14,11 +14,22 @@
     e.preventDefault();
     deferredPrompt = e;
 
-  <!-- Install Button with X to close -->
-<button id="installBtn" class="install-btn">
-  Install Apk
-  <span id="closeBtn" class="close-btn">&times;</span> <!-- Close button -->
-</button>
+    // Show a custom install button (optional)
+    const btn = document.createElement("button");
+    btn.innerText = "Install Apk";
+    btn.style = "position:fixed;bottom:20px;left:20px;padding:10px;background:red;color:white;border:none;border-radius:10px;";
+    document.body.appendChild(btn);
+    btn.addEventListener('click', () => {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(choice => {
+        if (choice.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        }
+        deferredPrompt = null;
+        btn.remove();
+      });
+    });
+  });
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
