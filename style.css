@@ -35,35 +35,6 @@ body {
   background-color: #ff3333;
 }
 
-/* Loader Spinner */
-.loader-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.spinner {
-  width: 60px;
-  height: 60px;
-  border: 6px solid rgba(255, 255, 255, 0.2);
-  border-top-color: red;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Header Layout */
 .header {
   display: flex;
@@ -71,8 +42,8 @@ body {
   align-items: center;
   padding: 15px 20px;
   background-color: #000;
-  z-index: 1000;
   position: relative;
+  z-index: 9999;
 }
 
 .logo img {
@@ -86,6 +57,8 @@ body {
   cursor: pointer;
   color: #fff;
   user-select: none;
+  position: relative;
+  z-index: 10000;
 }
 
 /* Notice Bar */
@@ -101,6 +74,7 @@ body {
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
+  z-index: 10;
 }
 
 .notice-bar marquee {
@@ -161,6 +135,7 @@ h3 {
   z-index: 1;
 }
 
+/* Live Now Section */
 .live-now {
   margin: 30px 0;
   padding: 0 15px;
@@ -172,9 +147,12 @@ h3 {
   margin-bottom: 15px;
 }
 
+/* Swiper Integration */
 .live-swiper {
   overflow: hidden;
   padding-bottom: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .live-swiper .swiper-wrapper {
@@ -210,15 +188,15 @@ h3 {
   text-align: center;
 }
 
-/* Prevent Swiper from affecting global layout */
-.swiper,
-.swiper-wrapper,
-.swiper-slide {
+/* Restrict Swiper Reset */
+.live-swiper .swiper,
+.live-swiper .swiper-wrapper,
+.live-swiper .swiper-slide {
   all: unset;
   display: revert;
 }
 
-  /* Player Container */
+/* Player Container */
 .player-container {
   max-width: 100%;
   margin: 20px auto;
@@ -230,7 +208,7 @@ video {
   background: #000;
 }
 
-/* Live Now: Horizontal Slider */
+/* Live Carousel Fallback */
 .live-carousel-wrapper {
   overflow: hidden;
   position: relative;
@@ -346,6 +324,7 @@ video {
   border-left: 4px solid red;
 }
 
+/* Footer */
 .footer {
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
