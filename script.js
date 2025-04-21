@@ -1,10 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Loader
-window.addEventListener("load", function () {
+window.addEventListener("load", () => {
+  // ডেটা লোড হবার পর লোডিং স্পিনার সরানো
   const loader = document.querySelector(".loader-wrapper");
-  if (loader) {
-    loader.style.display = "none";
-  }
+  if (loader) loader.style.display = "none";  // লোডিং স্পিনার লুকিয়ে ফেলুন
+
+  // চ্যানেল লোডিং কোড
+  const channelContainer = document.getElementById("channelContainer");
+  if (!channels || !Array.isArray(channels)) return;
+
+  channels.forEach(channel => {
+    const channelDiv = document.createElement("div");
+    channelDiv.className = "channel-card";
+    channelDiv.innerHTML = `
+      <img src="${channel.logo}" alt="${channel.name}" />
+      <h3>${channel.name}</h3>
+    `;
+    channelDiv.onclick = () => {
+      window.location.href = `player.html?name=${encodeURIComponent(channel.name)}&url=${encodeURIComponent(channel.url)}`;
+    };
+    channelContainer.appendChild(channelDiv);
 });
   const container = document.getElementById("channelContainer");
   const searchInput = document.getElementById("searchInput");
