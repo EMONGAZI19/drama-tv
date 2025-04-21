@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Loader
-window.addEventListener("load", () => {
+window.addEventListener("load", function () {
   const loader = document.querySelector(".loader-wrapper");
   if (loader) {
     loader.style.display = "none";
+  }
 });
   const container = document.getElementById("channelContainer");
   const searchInput = document.getElementById("searchInput");
