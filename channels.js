@@ -3,7 +3,7 @@ const channels = {
     {
       name: "Test ",
       img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "http://kst.moonplex.net:8080/CH3/tracks-v1a1/mono.m3u8",
+      url: "http://38.96.178.201/live/STARJALSHA/index.m3u8",
       isLive: true
     },
     {
