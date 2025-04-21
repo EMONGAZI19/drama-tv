@@ -64,6 +64,30 @@ body {
   }
 }
 
+/* Header Layout */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #000;
+  z-index: 1000;
+  position: relative;
+}
+
+.logo img {
+  height: 45px;
+  max-width: 100%;
+}
+
+/* Menu Icon */
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  user-select: none;
+}
+
 /* Notice Bar */
 .notice-bar {
   background: linear-gradient(to right, #ff4e50, #f9d423);
@@ -184,6 +208,14 @@ h3 {
   color: #fff;
   font-size: 1em;
   text-align: center;
+}
+
+/* Prevent Swiper from affecting global layout */
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  all: unset;
+  display: revert;
 }
 
   /* Player Container */
