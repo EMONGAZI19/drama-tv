@@ -1,18 +1,94 @@
-/* Body Styling */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
 body {
   background: #111 url('your-background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
   font-family: sans-serif;
-  margin: 0;
-  padding: 0 10px;
-  margin-top: 140px; /* Adjusted to make space for fixed header and notice bar */
+  padding-top: 180px; /* Space for fixed header and notice bar */
 }
 
-/* Title */
-.title {
+/* Header (Logo left + Menu right) */
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.header {
+  background: linear-gradient(to right, #000000, #2c3e50);
+  border-bottom: 2px solid red;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
+}
+.logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+.menu-icon {
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Notice Bar */
+.notice-bar {
+  background: linear-gradient(to right, #ff4e50, #f9d423);
+  color: #fff;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
   text-align: center;
-  margin-top: 20px;
+  border-top: 3px solid #ff0000;
+  border-bottom: 3px solid #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+.notice-bar marquee {
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.search-box input {
+  width: 50%;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: 2px solid #444;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  color: #fff;
+  text-align: center;
+}
+.search-box input:focus {
+  outline: none;
+  border-color: red;
+  background-color: #333;
 }
 
 /* Scroll To Top Button */
@@ -35,7 +111,7 @@ body {
   background-color: #ff3333;
 }
 
-/* Loader Spinner */
+/* Loader */
 .loader-wrapper {
   position: fixed;
   top: 0;
@@ -62,106 +138,6 @@ body {
   }
 }
 
-/* Notice Bar */
-.notice-bar {
-  background: linear-gradient(to right, #ff4e50, #f9d423);
-  color: #fff;
-  padding: 12px 0;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  border-top: 3px solid #ff0000;
-  border-bottom: 3px solid #ff0000;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  overflow: hidden;
-}
-.notice-bar marquee {
-  font-family: 'Segoe UI', sans-serif;
-  letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-}
-
-/* Header with Logo and Dropdown */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: linear-gradient(to right, #000000, #2c3e50);
-  border-bottom: 2px solid red;
-  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
-  width: 100%;
-  position: fixed;
-  top: 50px; /* Positioned just below notice bar */
-  left: 0;
-  z-index: 9999;
-}
-.header .logo {
-  display: flex;
-  align-items: center;
-}
-.header .logo img {
-  width: 60px;
-  height: auto;
-  margin-right: 10px;
-}
-.header .logo span {
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-}
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-.dropdown-btn {
-  background-color: red;
-  color: white;
-  padding: 10px 18px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #222;
-  min-width: 160px;
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
-  border-radius: 6px;
-  z-index: 1000;
-  margin-top: 5px;
-}
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  display: block;
-  text-decoration: none;
-  border-bottom: 1px solid #333;
-  font-size: 15px;
-}
-.dropdown-content a:hover {
-  background-color: #ff0000;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Section Heading */
-h3 {
-  border-left: 4px solid red;
-  padding-left: 10px;
-  margin-top: 30px;
-}
-
 /* Channel Grid */
 .channel-grid {
   display: grid;
@@ -186,9 +162,6 @@ h3 {
   margin-top: 8px;
   font-size: 14px;
 }
-.thumbnail-container {
-  position: relative;
-}
 
 /* LIVE Badge */
 .live-badge {
@@ -204,36 +177,7 @@ h3 {
   z-index: 1;
 }
 
-/* Ripple Effect */
-.ripple {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  animation: ripple-animation 0.6s linear;
-  pointer-events: none;
-}
-@keyframes ripple-animation {
-  to {
-    transform: translate(-50%, -50%) scale(4);
-    opacity: 0;
-  }
-}
-
-/* Player Container */
-.player-container {
-  max-width: 100%;
-  margin: 20px auto;
-}
-video {
-  width: 100%;
-  max-height: 300px;
-  background: #000;
-}
-
-/* Live Now: Swiper.js Integration */
+/* Live Now Swiper */
 .live-slider-wrapper {
   margin: 30px 0;
 }
@@ -257,8 +201,6 @@ video {
   font-size: 13px;
   margin-top: 6px;
 }
-
-/* Swiper Navigation */
 .swiper-button-prev,
 .swiper-button-next {
   color: red;
@@ -267,38 +209,24 @@ video {
   background-color: red;
 }
 
-/* Search Box */
-.search-box {
+/* Video Player */
+.player-container {
+  max-width: 100%;
+  margin: 20px auto;
+}
+video {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-.search-box input {
-  width: 50%;
-  padding: 12px 20px;
-  font-size: 18px;
-  border: 2px solid #444;
-  border-radius: 10px;
-  background-color: #1e1e1e;
-  color: #fff;
-  text-align: center;
-  box-sizing: border-box;
-}
-.search-box input:focus {
-  outline: none;
-  border-color: red;
-  background-color: #333;
+  max-height: 300px;
+  background: #000;
 }
 
-/* Plyr Quality Dropdown Styling */
+/* Plyr Quality */
 .plyr__menu {
   background-color: #1e1e1e !important;
   border-radius: 10px !important;
   box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4) !important;
 }
 .plyr__menu__container {
-  font-family: 'Segoe UI', sans-serif;
   font-size: 14px;
   color: #fff;
   max-height: 200px;
@@ -321,7 +249,6 @@ video {
   background-color: transparent !important;
   color: #fff !important;
   padding: 10px 16px !important;
-  transition: background-color 0.3s, color 0.3s !important;
   font-weight: 500;
   text-align: left;
 }
@@ -366,13 +293,9 @@ video {
   color: #eee;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 .footer-links a:hover {
   color: #ffdd57;
-}
-.footer-social {
-  margin-bottom: 25px;
 }
 .footer-social a {
   margin: 0 10px;
