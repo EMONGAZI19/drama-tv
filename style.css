@@ -166,27 +166,31 @@ video {
   width: 100%;
   margin: 30px 0;
 }
+
 .live-slider {
   display: flex;
   transition: transform 1s ease-in-out;
   will-change: transform;
-  gap: 15px;
 }
+
 .small-channel {
   min-width: 33.33%;
   background: #1e1e1e;
-  padding: 10px;
+  margin: 0 10px;
   border-radius: 10px;
   text-align: center;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.5s ease;
 }
+
 .small-channel img {
   width: 100%;
   border-radius: 6px;
 }
+
 .small-channel span {
   margin-top: 6px;
   display: block;
