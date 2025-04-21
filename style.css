@@ -7,7 +7,7 @@
 
 /* Body */
 body {
-  background: #111 url('your-background.jpg') no-repeat center center fixed;
+  background: #111 url('your-background.jpg') no-repeat center center;
   background-size: cover;
   color: #fff;
   font-family: sans-serif;
