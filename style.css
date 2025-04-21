@@ -11,7 +11,7 @@ body {
   background-size: cover;
   color: #fff;
   font-family: sans-serif;
-  padding-top: 200px; /* Enough space for fixed header + notice bar */
+  padding-top: 130px; /* Enough space for fixed header + notice bar */
 }
 
 /* Header Wrapper */
