@@ -363,6 +363,26 @@
     <p class="footer-copy">&copy; 2025 <strong>Drama World</strong> — সর্বস্বত্ব সংরক্ষিত।</p>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('fullscreenchange', () => {
+    if (document.fullscreenElement) {
+      // Fullscreen mode: try to rotate to landscape
+      if (screen.orientation && screen.orientation.lock) {
+        screen.orientation.lock('landscape').catch((err) => {
+          console.log('Orientation lock failed:', err);
+        });
+      }
+    } else {
+      // Exit fullscreen: rotate back to portrait
+      if (screen.orientation && screen.orientation.lock) {
+        screen.orientation.lock('portrait').catch((err) => {
+          console.log('Orientation unlock failed:', err);
+        });
+      }
+    }
+  });
+</script>
   
 </body>
 </html>
