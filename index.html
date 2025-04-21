@@ -1,7 +1,36 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="manifest.json">
+<script>
+  // Register service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+
+  // Show install prompt
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+
+    // Show a custom install button (optional)
+    const btn = document.createElement("button");
+    btn.innerText = "Install Drama World Live TV";
+    btn.style = "position:fixed;bottom:20px;right:20px;padding:10px;background:red;color:white;border:none;border-radius:10px;";
+    document.body.appendChild(btn);
+    btn.addEventListener('click', () => {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(choice => {
+        if (choice.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        }
+        deferredPrompt = null;
+        btn.remove();
+      });
+    });
+  });
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drama World Live TV</title>
