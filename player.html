@@ -281,7 +281,7 @@
     if (channels[category]) {
       channels[category]
         .filter(ch => ch.name !== name)
-        .slice(0, 6)
+        .slice(0, 30)
         .forEach(ch => {
           const div = document.createElement("div");
           div.className = "channel";
