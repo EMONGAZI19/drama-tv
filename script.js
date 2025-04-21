@@ -148,7 +148,6 @@ document.querySelectorAll('.channel').forEach(channel => {
   });
 });
 
-// Animate Live Slider
 function animateLiveSlider() {
   const slider = document.querySelector(".live-slider");
   if (!slider) return;
@@ -157,11 +156,14 @@ function animateLiveSlider() {
   let index = 0;
 
   function slideNext() {
-    if (index >= totalSlides - 2) return;
+    if (index >= totalSlides - 2) {
+      index = 0; // Reset to the beginning for infinite loop
+    } else {
+      index++;
+    }
 
     slider.style.transition = "transform 1s ease-in-out";
     slider.style.transform = `translateX(-${index * 33.33}%)`;
-    index++;
     setTimeout(slideNext, 4000);
   }
 
