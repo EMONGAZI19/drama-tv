@@ -43,7 +43,7 @@ const channels = {
     { name: "Sony Aath", img: "https://i.postimg.cc/VvnwTMgf/20250421-053825.png", url: "http://38.96.178.201/live/SonyAath/index.m3u8", isLive: false },
     { name: "Jalsha Movies", img: "https://i.postimg.cc/J7kRGVLf/20250421-054133.png", url: "http://38.96.178.201/live/JalshaMovies/index.m3u8", isLive: false },
     { name: "Ruposhi Bangla", img: "https://i.postimg.cc/fRXdKgmp/20250421-065011.png", url: "http://38.96.178.201/live/RuposhiBangla/index.m3u8", isLive: false },
-{ { name: "Akash Aath", img: "https://i.postimg.cc/hG1dFzC0/20250421-065356.png", url: "http://38.96.178.201/live/AkashAath/index.m3u8", isLive: false 
+ { name: "Akash Aath", img: "https://i.postimg.cc/hG1dFzC0/20250421-065356.png", url: "http://38.96.178.201/live/AkashAath/index.m3u8", isLive: false },
   { name: "Zee Bangla Cinema", img: "https://i.postimg.cc/05W72S9W/20250421-064417.png", url: "https://raw.githubusercontent.com/selimgazi999/Own/refs/heads/main/php.zeebanglacinema.m3u8?token=GHSAT0AAAAAADCRORFOXSQ7YS47VM5QI4SW2AFSQLA", isLive: false }
   ],
   "Kids": [
