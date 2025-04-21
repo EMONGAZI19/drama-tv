@@ -149,3 +149,26 @@ function animateLiveSlider() {
 
   setTimeout(slideNext, 4000);
 }
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('install-container').style.display = 'flex';
+});
+
+document.getElementById('install-button').addEventListener('click', async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      document.getElementById('install-container').style.display = 'none';
+    }
+    deferredPrompt = null;
+  }
+});
+
+document.getElementById('install-close').addEventListener('click', () => {
+  document.getElementById('install-container').style.display = 'none';
+});
