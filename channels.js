@@ -3,7 +3,7 @@ const channels = {
     {
       name: "Test ",
       img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "http://aktv_stream.m16tv.cfd/stream/tuntun/astrofootball/AKTV.m3u8",
+      url: "http://xtv.ooo:8080/live/danyear12/am809100/245897.m3u8",
       isLive: true
     },
     {
