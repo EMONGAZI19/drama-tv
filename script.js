@@ -1,5 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
 });
+window.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("channelContainer");
+
+  channels.forEach(channel => {
+    const div = document.createElement("div");
+    div.className = "channel-card";
+    div.innerHTML = `
+      <a href="${channel.url}">
+        <img src="${channel.image}" alt="${channel.name}">
+        <h3>${channel.name}</h3>
+      </a>
+    `;
+    container.appendChild(div);
+  });
   const container = document.getElementById("channelContainer");
   const searchInput = document.getElementById("searchInput");
 
