@@ -15,13 +15,13 @@ const channels = {
   
   ],
   "Bangladesh": [
-    { name: "BD Channel 1", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
-    { name: "BD Channel 2", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
-    { name: "BD Channel 3", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
-    { name: "BD Channel 4", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
-    { name: "BD Channel 5", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
-    { name: "BD Channel 6", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
-    { name: "BD Channel 7", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
+    { name: "Jamuna TV", img: "https://i.postimg.cc/Jz4ny6Kj/20250421-072931.png", url: "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1701/output/index.m3u8", isLive: false },
+    { name: "Atn News ", img: "https://i.postimg.cc/gkrkpvgT/20250421-073342.png", url: "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1706/output/index.m3u8", isLive: false },
+    { name: "Channel 24", img: "https://i.postimg.cc/tRktwHcz/20250421-073644.png", url: "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1703/output/index.m3u8", isLive: false },
+    { name: "Ekattor TV", img: "https://i.postimg.cc/sDVyf5wr/20250421-073902.png", url: "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1705/output/index.m3u8", isLive: false },
+    { name: "Somoy TV", img: "https://i.postimg.cc/0NvhZsFq/20250421-074208.png", url: "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1702/output/index.m3u8", isLive: false },
+    { name: "Independent.Tv", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
+    { name: "DBC News", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "BD Channel 8", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "BD Channel 9", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "BD Channel 10", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false }
