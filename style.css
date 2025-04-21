@@ -159,42 +159,38 @@ video {
   background: #000;
 }
 
-/* Live Now: Horizontal Slider */
+/* Live Now: Swiper.js Integration */
 .live-slider-wrapper {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
   margin: 30px 0;
 }
-
-.live-slider {
-  display: flex;
-  transition: transform 1s ease-in-out;
-  will-change: transform;
+.swiper {
+  padding-bottom: 20px;
 }
-
-.small-channel {
-  min-width: 33.33%;
+.swiper-slide {
   background: #1e1e1e;
-  margin: 0 10px;
   border-radius: 10px;
   text-align: center;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  flex-shrink: 0;
-  transition: transform 0.5s ease;
 }
-
-.small-channel img {
+.swiper-slide img {
   width: 100%;
   border-radius: 6px;
 }
-
-.small-channel span {
-  margin-top: 6px;
+.swiper-slide span {
   display: block;
   font-size: 13px;
+  margin-top: 6px;
+}
+
+/* Swiper Navigation */
+.swiper-button-prev,
+.swiper-button-next {
+  color: red;
+}
+.swiper-pagination-bullet {
+  background-color: red;
 }
 
 /* Search Box */
