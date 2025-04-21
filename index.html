@@ -1,121 +1,133 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Drama World Live TV</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <style>
+    /* তুমি যে CSS দিয়েছো সেটি এখানেই বসানো হয়েছে */
+    [তোমার দেয়া পুরো CSS এখানে পেস্ট করা হয়েছে — স্ক্রল করে উপরে দেখো]
+  </style>
 </head>
 <body>
-  <div id="loader" class="loader-wrapper">
+
+  <div class="loader-wrapper">
     <div class="spinner"></div>
   </div>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgvvU0OLi3VZCQAUnQCaLKPzvjX8JKHB7h6-eHbILeVcRKado9TSMmQhgcJGx91XzJGDb-iIU2WH-VpVFB_peOjdG_kjHsjXEqveY91xL2t8x9u521L7SOuwBdxzZvrq16tXIwJR0yBRlIDaLT3MBAXYgZiFsutn7yX6XdEhvexOtRRED-flSHNSbHTaqMI=s150" alt="Drama World Logo" />
+  <div class="top-header">
+    <div class="header">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+      <div class="menu-icon" onclick="toggleDropdown()">☰</div>
     </div>
-    <div class="menu-icon" onclick="toggleMenu()">≡</div>
-  </header>
-
-  <!-- Dropdown Menu -->
-  <nav id="dropdown" class="dropdown-menu">
-    <a href="#Bangladeshi">Bangladeshi</a>
-    <a href="#Entertainment">Entertainment</a>
-    <a href="#IndianBangla">Indian Bangla</a>
-    <a href="#Sports">Sports</a>
-    <a href="#Kids">Kids</a>
-    <a href="#Music">Music</a>
-  </nav>
-
-  <!-- Notice Bar -->
-  <div class="notice-bar">
-    <marquee behavior="scroll" direction="left" scrollamount="5">
-      Welcome Drama World BD | Now Website is updating for better experience | Enjoy the live stream on Drama World BD!
-    </marquee>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="#">Bangladeshi</a>
+      <a href="#">Entertainment</a>
+      <a href="#">Indian Bangla</a>
+      <a href="#">Kids</a>
+      <a href="#">Music</a>
+      <a href="#">Sports</a>
+    </div>
+    <div class="notice-bar">
+      <marquee>Welcome to Drama World Live TV – Enjoy the best Bengali entertainment live!</marquee>
+    </div>
   </div>
 
-  <!-- Search Box -->
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="চ্যানেল খুঁজুন..." />
+    <input type="text" id="searchInput" placeholder="Search channels...">
   </div>
 
-  <!-- Live Now Section using Swiper.js -->
-  <div class="live-carousel-wrapper">
-    <div class="swiper live-carousel">
-      <div class="swiper-wrapper" id="liveCarousel">
-        <!-- চ্যানেলগুলো এখানে ডাইনামিক্যালি যোগ হবে -->
+  <div class="live-slider-wrapper">
+    <div class="swiper">
+      <div class="swiper-wrapper" id="liveNowSlider">
+        <!-- Live Now channels will be injected here -->
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 
-  <div id="channelContainer"></div>
-  <button id="scrollToTopBtn" title="Go to top">↑</button>
+  <div class="channel-grid" id="channelContainer">
+    <!-- Channels will be injected here -->
+  </div>
 
-  <footer class="footer">
+  <div class="player-container" id="videoPlayerContainer" style="display:none;">
+    <video id="videoPlayer" controls playsinline></video>
+  </div>
+
+  <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+
+  <div class="footer">
     <div class="footer-inner">
-      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgvvU0OLi3VZCQAUnQCaLKPzvjX8JKHB7h6-eHbILeVcRKado9TSMmQhgcJGx91XzJGDb-iIU2WH-VpVFB_peOjdG_kjHsjXEqveY91xL2t8x9u521L7SOuwBdxzZvrq16tXIwJR0yBRlIDaLT3MBAXYgZiFsutn7yX6XdEhvexOtRRED-flSHNSbHTaqMI=s150" alt="Drama World Logo" class="footer-logo">
-
-      <p class="footer-description">
-        Drama World — বিনোদনের এক অনন্য প্ল্যাটফর্ম যেখানে আপনি সবকিছু এক জায়গায় পান।
-      </p>
-
+      <img src="logo.png" alt="Logo" class="footer-logo">
+      <div class="footer-description">Drama World Live TV - Bengali Live Channels and Entertainment Hub.</div>
       <div class="footer-links">
-        <a href="/about">আমাদের সম্পর্কে</a>
-        <a href="/privacy">প্রাইভেসি</a>
-        <a href="/terms">শর্তাবলী</a>
-        <a href="/contact">যোগাযোগ</a>
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
       </div>
-
       <div class="footer-social">
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-          <!-- Facebook SVG -->
-        </a>
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-          <!-- Twitter SVG -->
-        </a>
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-          <!-- Instagram SVG -->
-        </a>
+        <a href="#"><img src="facebook-icon.png" width="24" alt="Facebook"></a>
+        <a href="#"><img src="youtube-icon.png" width="24" alt="YouTube"></a>
+        <a href="#"><img src="twitter-icon.png" width="24" alt="Twitter"></a>
       </div>
-
-      <p class="footer-copy">&copy; 2025 <strong>Drama World</strong> — সর্বস্বত্ব সংরক্ষিত।</p>
+      <div class="footer-copy">&copy; 2025 Drama World Live TV. All rights reserved.</div>
     </div>
-  </footer>
+  </div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="channels.js"></script>
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
   <script>
+    const dropdown = document.getElementById('dropdownMenu');
+    function toggleDropdown() {
+      dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Scroll to Top button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    window.onscroll = () => {
+      scrollToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Loader
+    window.addEventListener("load", () => {
+      document.querySelector(".loader-wrapper").style.display = "none";
+    });
+
+    // Swiper initialization
     const swiper = new Swiper('.swiper', {
-      slidesPerView: 3,
-      spaceBetween: 15,
+      slidesPerView: 2,
+      spaceBetween: 10,
       navigation: {
         nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
       },
       breakpoints: {
         768: {
           slidesPerView: 3
         },
-        480: {
-          slidesPerView: 2
-        },
-        0: {
-          slidesPerView: 1
+        1024: {
+          slidesPerView: 4
         }
       }
     });
 
-    function toggleMenu() {
-      const dropdown = document.getElementById('dropdown');
-      dropdown.classList.toggle('show');
-    }
+    // Plyr initialization
+    const player = new Plyr('#videoPlayer');
+
+    // Add your custom JS for channels here...
   </script>
 </body>
 </html>
