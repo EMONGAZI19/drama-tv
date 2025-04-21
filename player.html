@@ -225,7 +225,7 @@
   <script src="channels.js"></script>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const originalStream = decodeURIComponent(urlParams.get("stream"));   
+    const streamUrl = decodeURIComponent(urlParams.get("stream"));
     const category = decodeURIComponent(urlParams.get("category"));
     const name = decodeURIComponent(urlParams.get("name"));
     const logo = decodeURIComponent(urlParams.get("logo"));
