@@ -6,6 +6,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0 10px;
+  margin-top: 140px; /* Adjusted to make space for fixed header and notice bar */
 }
 
 /* Title */
@@ -90,10 +91,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 10px;
+  padding: 15px 20px;
   background: linear-gradient(to right, #000000, #2c3e50);
   border-bottom: 2px solid red;
   box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+  width: 100%;
+  position: fixed;
+  top: 50px; /* Positioned just below notice bar */
+  left: 0;
+  z-index: 9999;
 }
 .header .logo {
   display: flex;
