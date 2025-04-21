@@ -7,9 +7,9 @@ const channels = {
       isLive: true
     },
     {
-      name: "Live Match 2",
+      name: "Live test 2",
       img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "http://kst.moonplex.net:8080/CH3/index.m3u8",
+      url: "https://raw.githubusercontent.com/EMONGAZI19/XYZ/refs/heads/main/starbd.dramaworld.m3u8",
       isLive: true
     },
   
