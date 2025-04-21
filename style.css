@@ -30,7 +30,6 @@ body {
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-
 #scrollToTopBtn:hover {
   background-color: #ff3333;
 }
@@ -48,7 +47,6 @@ body {
   align-items: center;
   z-index: 9999;
 }
-
 .spinner {
   width: 60px;
   height: 60px;
@@ -57,7 +55,6 @@ body {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
-
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -78,7 +75,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
 .notice-bar marquee {
   font-family: 'Segoe UI', sans-serif;
   letter-spacing: 1px;
@@ -92,33 +88,30 @@ h3 {
   margin-top: 30px;
 }
 
-/* Main Channel Grid */
+/* Channel Grid */
 .channel-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin-bottom: 40px;
 }
-
 .channel {
   background: #1e1e1e;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
+  position: relative;
 }
-
 .channel img {
   width: 100%;
   border-radius: 5px;
 }
-
 .channel span {
   display: block;
   margin-top: 8px;
   font-size: 14px;
 }
-
 .thumbnail-container {
   position: relative;
 }
@@ -137,18 +130,7 @@ h3 {
   z-index: 1;
 }
 
-/* Player Container */
-.player-container {
-  max-width: 100%;
-  margin: 20px auto;
-}
-
-video {
-  width: 100%;
-  max-height: 300px;
-  background: #000;
-}
-
+/* Ripple Effect */
 .ripple {
   position: absolute;
   width: 100px;
@@ -157,8 +139,8 @@ video {
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(0);
   animation: ripple-animation 0.6s linear;
+  pointer-events: none;
 }
-
 @keyframes ripple-animation {
   to {
     transform: translate(-50%, -50%) scale(4);
@@ -166,39 +148,46 @@ video {
   }
 }
 
+/* Player Container */
+.player-container {
+  max-width: 100%;
+  margin: 20px auto;
+}
+video {
+  width: 100%;
+  max-height: 300px;
+  background: #000;
+}
+
 /* Live Now: Horizontal Slider */
-.live-carousel-wrapper {
+.live-slider-wrapper {
   overflow: hidden;
   position: relative;
   width: 100%;
   margin: 30px 0;
 }
-
-.live-carousel {
+.live-slider {
   display: flex;
   transition: transform 1s ease-in-out;
   will-change: transform;
+  gap: 15px;
 }
-
-.live-carousel-item {
+.small-channel {
   min-width: 33.33%;
   background: #1e1e1e;
-  margin: 0 10px;
+  padding: 10px;
   border-radius: 10px;
   text-align: center;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.5s ease;
 }
-
-.live-carousel-item img {
+.small-channel img {
   width: 100%;
   border-radius: 6px;
 }
-
-.live-carousel-item span {
+.small-channel span {
   margin-top: 6px;
   display: block;
   font-size: 13px;
@@ -211,7 +200,6 @@ video {
   justify-content: center;
   margin: 20px 0;
 }
-
 .search-box input {
   width: 50%;
   padding: 12px 20px;
@@ -223,7 +211,6 @@ video {
   text-align: center;
   box-sizing: border-box;
 }
-
 .search-box input:focus {
   outline: none;
   border-color: red;
@@ -236,7 +223,6 @@ video {
   border-radius: 10px !important;
   box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4) !important;
 }
-
 .plyr__menu__container {
   font-family: 'Segoe UI', sans-serif;
   font-size: 14px;
@@ -246,21 +232,17 @@ video {
   border-radius: 10px;
   padding: 5px 0;
 }
-
 .plyr__menu__container::-webkit-scrollbar {
   width: 6px;
 }
-
 .plyr__menu__container::-webkit-scrollbar-thumb {
   background-color: #ff0000;
   border-radius: 4px;
 }
-
 .plyr__menu__value {
   color: #ffcc00;
   font-weight: bold;
 }
-
 .plyr__control[role="menuitemradio"] {
   background-color: transparent !important;
   color: #fff !important;
@@ -269,12 +251,10 @@ video {
   font-weight: 500;
   text-align: left;
 }
-
 .plyr__control[role="menuitemradio"]:hover {
   background-color: #ff0000 !important;
   color: #fff !important;
 }
-
 .plyr__control[role="menuitemradio"][aria-checked="true"] {
   background-color: #292929 !important;
   color: #ffcc00 !important;
@@ -282,6 +262,7 @@ video {
   border-left: 4px solid red;
 }
 
+/* Footer */
 .footer {
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
@@ -289,28 +270,23 @@ video {
   padding: 50px 20px;
   font-family: 'Segoe UI', sans-serif;
 }
-
 .footer-inner {
   max-width: 800px;
   margin: auto;
 }
-
 .footer-logo {
   width: 100px;
   margin-bottom: 20px;
 }
-
 .footer-description {
   font-size: 15px;
   color: #ccc;
   margin-bottom: 25px;
   line-height: 1.6;
 }
-
 .footer-links {
   margin-bottom: 25px;
 }
-
 .footer-links a {
   margin: 0 15px;
   color: #eee;
@@ -318,25 +294,20 @@ video {
   font-weight: 500;
   transition: color 0.3s ease;
 }
-
 .footer-links a:hover {
   color: #ffdd57;
 }
-
 .footer-social {
   margin-bottom: 25px;
 }
-
 .footer-social a {
   margin: 0 10px;
   display: inline-block;
   transition: transform 0.3s ease;
 }
-
 .footer-social a:hover {
   transform: scale(1.2);
 }
-
 .footer-copy {
   font-size: 14px;
   color: #aaa;
