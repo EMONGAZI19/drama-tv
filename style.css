@@ -11,10 +11,10 @@ body {
   background-size: cover;
   color: #fff;
   font-family: sans-serif;
-  padding-top: 180px; /* Space for fixed header and notice bar */
+  padding-top: 200px; /* Enough space for fixed header + notice bar */
 }
 
-/* Header (Logo left + Menu right) */
+/* Header Wrapper */
 .top-header {
   position: fixed;
   top: 0;
@@ -22,15 +22,18 @@ body {
   width: 100%;
   z-index: 9999;
 }
+
+/* Header */
 .header {
   background: linear-gradient(to right, #000000, #2c3e50);
-  border-bottom: 2px solid red;
-  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
+  border-bottom: 2px solid red;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -38,17 +41,38 @@ body {
 .logo img {
   width: 60px;
   height: auto;
-  margin-right: 10px;
 }
-.logo span {
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
-}
+
 .menu-icon {
-  font-size: 24px;
-  color: #fff;
+  font-size: 30px;
+  color: white;
   cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #1e1e1e;
+  border: 1px solid red;
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 10000;
+}
+.dropdown-menu a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+}
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+.dropdown-menu a:hover {
+  background-color: red;
 }
 
 /* Notice Bar */
