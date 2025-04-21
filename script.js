@@ -149,3 +149,41 @@ function animateLiveSlider() {
 
   setTimeout(slideNext, 4000);
 }
+
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+const closeBtn = document.getElementById('closeBtn');
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+    console.log('Service Worker registered with scope:', registration.scope);
+  }).catch(function(error) {
+    console.log('Service Worker registration failed:', error);
+  });
+}
+
+// Show install prompt
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Show install button
+  installBtn.style.display = 'block'; // Show the button
+
+  // Close button functionality
+  closeBtn.addEventListener('click', () => {
+    installBtn.style.display = 'none'; // Hide the button when 'x' is clicked
+  });
+
+  installBtn.addEventListener('click', () => {
+    deferredPrompt.prompt(); // Show install prompt
+    deferredPrompt.userChoice.then(choiceResult => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      }
+      deferredPrompt = null;
+      installBtn.style.display = 'none'; // Hide the button after installation
+    });
+  });
+});
