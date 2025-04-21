@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("loader");
   const container = document.getElementById("channelContainer");
   const searchInput = document.getElementById("searchInput");
 
@@ -12,46 +13,37 @@ document.addEventListener("DOMContentLoaded", () => {
       const heading = document.createElement("h3");
       heading.textContent = category;
 
-      if (category === "Live Now") {
-        const swiperContainer = document.createElement("div");
-        swiperContainer.className = "swiper live-swiper";
+      let grid;
 
-        const swiperWrapper = document.createElement("div");
-        swiperWrapper.className = "swiper-wrapper";
+      if (category === "Live Now") {
+        const sliderWrapper = document.createElement("div");
+        sliderWrapper.className = "live-slider-wrapper";
+
+        grid = document.createElement("div");
+        grid.className = "live-slider";
 
         channels[category].forEach(channel => {
-          const slide = document.createElement("div");
-          slide.className = "swiper-slide";
-          slide.onclick = () => {
+          const div = document.createElement("div");
+          div.className = "channel small-channel";
+          div.onclick = () => {
             window.location.href = `player.html?stream=${encodeURIComponent(channel.url)}&category=${encodeURIComponent(category)}&name=${encodeURIComponent(channel.name)}&logo=${encodeURIComponent(channel.img)}`;
           };
-          slide.innerHTML = `
+          div.innerHTML = `
             <div class="thumbnail-container">
               <img src="${channel.img}" alt="${channel.name}" />
               ${channel.isLive ? '<span class="live-badge">LIVE</span>' : ''}
             </div>
             <span>${channel.name}</span>
           `;
-          swiperWrapper.appendChild(slide);
+          grid.appendChild(div);
         });
 
-        swiperContainer.appendChild(swiperWrapper);
+        sliderWrapper.appendChild(grid);
         section.appendChild(heading);
-        section.appendChild(swiperContainer);
+        section.appendChild(sliderWrapper);
         container.appendChild(section);
-
-        // Initialize Swiper after DOM updates
-        setTimeout(() => {
-          new Swiper('.live-swiper', {
-            slidesPerView: 'auto',
-            spaceBetween: 15,
-            freeMode: true,
-            grabCursor: true,
-          });
-        }, 0);
-
       } else {
-        const grid = document.createElement("div");
+        grid = document.createElement("div");
         grid.className = "channel-grid";
 
         channels[category].forEach(channel => {
@@ -75,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(section);
       }
     }
+
+    animateLiveSlider();
   }
 
   function filterChannels(query) {
@@ -118,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  if (loader) loader.style.display = "none";
   renderAllChannels();
 });
 
@@ -130,8 +125,27 @@ scrollBtn.onclick = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-// Dropdown toggle
 function toggleMenu() {
   const menu = document.getElementById("dropdown");
   menu.classList.toggle("show");
+}
+
+// Animate Live Slider
+function animateLiveSlider() {
+  const slider = document.querySelector(".live-slider");
+  if (!slider) return;
+
+  const totalSlides = slider.children.length;
+  let index = 0;
+
+  function slideNext() {
+    if (index >= totalSlides - 2) return;
+
+    slider.style.transition = "transform 1s ease-in-out";
+    slider.style.transform = `translateX(-${index * 33.33}%)`;
+    index++;
+    setTimeout(slideNext, 4000);
+  }
+
+  setTimeout(slideNext, 4000);
 }
