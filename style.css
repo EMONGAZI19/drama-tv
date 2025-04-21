@@ -81,6 +81,70 @@ body {
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
+/* Header with Logo and Dropdown */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  background: linear-gradient(to right, #000000, #2c3e50);
+  border-bottom: 2px solid red;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+}
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+.header .logo img {
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
+}
+.header .logo span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-btn {
+  background-color: red;
+  color: white;
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #222;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+  border-radius: 6px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+  font-size: 15px;
+}
+.dropdown-content a:hover {
+  background-color: #ff0000;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  
 /* Section Heading */
 h3 {
   border-left: 4px solid red;
