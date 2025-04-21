@@ -14,7 +14,6 @@ window.addEventListener("DOMContentLoaded", () => {
     `;
     container.appendChild(div);
   });
-  const container = document.getElementById("channelContainer");
   const searchInput = document.getElementById("searchInput");
 
   function renderAllChannels() {
@@ -131,7 +130,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  if (loader) loader.style.display = "none";
   renderAllChannels();
 });
 
