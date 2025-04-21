@@ -325,34 +325,3 @@ video {
   color: #aaa;
   margin-top: 20px;
 }
-
-#install-container {
-  position: fixed;
-  bottom: 20px;
-  left: 20px; /* ডান থেকে বাম করা হয়েছে */
-  display: flex;
-  align-items: center;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 8px 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-}
-
-#install-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-#install-close {
-  font-size: 20px;
-  margin-left: 10px;
-  cursor: pointer;
-  color: #333;
-}
