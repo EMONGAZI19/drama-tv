@@ -137,53 +137,27 @@ h3 {
   z-index: 1;
 }
 
-.live-now {
-  margin: 30px 0;
-  padding: 0 15px;
-}
-
-.live-now h2 {
-  color: #fff;
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-
-.live-swiper {
-  overflow: hidden;
-  padding-bottom: 10px;
+..live-swiper {
+  width: 100%;
+  padding: 10px 0;
 }
 
 .live-swiper .swiper-wrapper {
   display: flex;
-  align-items: stretch;
 }
 
 .live-swiper .swiper-slide {
-  width: auto;
+  width: 140px;
   flex-shrink: 0;
-  background: #1e1e1e;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  margin-right: 10px;
+  background: #111;
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
 }
-
 .live-swiper .swiper-slide:hover {
   transform: scale(1.05);
-}
-
-.live-swiper .swiper-slide img {
-  width: 200px;
-  height: 120px;
-  object-fit: cover;
-  display: block;
-}
-
-.live-swiper .swiper-slide .channel-name {
-  padding: 10px;
-  color: #fff;
-  font-size: 1em;
-  text-align: center;
 }
 
   /* Player Container */
