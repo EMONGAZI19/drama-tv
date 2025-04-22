@@ -1,6 +1,6 @@
 const m3uUrl = 'https://m3u.ch/pl/59e9a608c3dd91dae2d9ec1fc9dbf52a_0989dd3fbd4c4512315b5b25e668cbf1.m3u';
 
-// Live Now এর ৩টা ম্যানুয়াল চ্যানেল
+// Live Now এর ৩টা চ্যানেল
 const liveNowChannels = [
   {
     name: "Test 1",
@@ -22,48 +22,40 @@ const liveNowChannels = [
   }
 ];
 
-// M3U থেকে চ্যানেল লোড করে ক্যাটাগরি অনুযায়ী সাজানো
-async function loadChannelsFromM3U() {
-  const response = await fetch(m3uUrl);
-  const text = await response.text();
+async function fetchM3UChannels() {
+  const res = await fetch(m3uUrl);
+  const data = await res.text();
 
-  const lines = text.split('\n');
-  const categories = {};
+  const lines = data.split('\n');
+  const m3uChannels = [];
 
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
-    if (line.startsWith('#EXTINF')) {
-      const nameMatch = line.match(/,(.*)$/);
-      const groupMatch = line.match(/group-title="([^"]+)"/);
-
-      const name = nameMatch ? nameMatch[1].trim() : 'Unnamed';
-      const group = groupMatch ? groupMatch[1].trim() : 'Others';
+    if (lines[i].startsWith('#EXTINF')) {
+      const nameMatch = lines[i].match(/,(.*)$/);
+      const logoMatch = lines[i].match(/tvg-logo="(.*?)"/);
+      const name = nameMatch ? nameMatch[1].trim() : 'Unknown';
+      const img = logoMatch ? logoMatch[1].trim() : 'https://i.postimg.cc/d16Y2v56/20250421-001244.png';
       const url = lines[i + 1]?.trim();
 
       if (url && url.startsWith('http')) {
-        const channel = {
+        m3uChannels.push({
           name,
-          img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
+          img,
           url,
           isLive: false
-        };
-
-        if (!categories[group]) {
-          categories[group] = [];
-        }
-        categories[group].push(channel);
+        });
       }
     }
   }
 
-  return categories;
+  return m3uChannels;
 }
 
-// মূল এক্সপোর্ট: Live Now + M3U থেকে লোড হওয়া সব ক্যাটাগরি
 export async function getChannels() {
-  const m3uCategories = await loadChannelsFromM3U();
+  const otherChannels = await fetchM3UChannels();
+
   return {
     "Live Now": liveNowChannels,
-    ...m3uCategories
+    "Others": otherChannels
   };
 }
