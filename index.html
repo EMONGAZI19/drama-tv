@@ -3,9 +3,6 @@
 <head>
   <link rel="manifest" href="manifest.json">
 <script>
-  if (window.location.protocol !== 'https:') {
-    window.location.href = 'https://' + window.location.hostname + window.location.pathname + window.location.search;
-}
   
   // Register service worker
   if ('serviceWorker' in navigator) {
