@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
+  if (window.location.protocol !== 'https:') {
+    window.location.href = 'https://' + window.location.hostname + window.location.pathname + window.location.search;
+}
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Player - Drama World</title>
@@ -235,10 +238,6 @@
 
     const video = document.getElementById("player");
     const player = new Plyr(video);
-
-if (window.location.protocol !== 'https:') {
-    window.location.href = 'https://' + window.location.hostname + window.location.pathname + window.location.search;
-}
 
     
     if (Hls.isSupported()) {
