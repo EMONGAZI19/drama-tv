@@ -1,61 +1,57 @@
 const channels = {
   "Live Now": [
     {
-      name: "Test 1",
+      name: "Live Test 1",
       img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "https://tv.bdixtv24.co/toffee/live.php?id=7e00fee81848&e=.m3u8",
-      isLive: true
+      url: "https://example.com/stream1.m3u8"
     },
     {
-      name: "Test 2",
+      name: "Live Test 2",
       img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "https://raw.githubusercontent.com/EMONGAZI19/XYZ/refs/heads/main/starbd.dramaworld.m3u8",
-      isLive: true
+      url: "https://example.com/stream2.m3u8"
     },
     {
-      name: "Test 3",
+      name: "Live Test 3",
       img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "https://some-other-link.m3u8",
-      isLive: true
+      url: "https://example.com/stream3.m3u8"
     }
-  ]
 };
 
-async function loadM3UChannels() {
-  const m3uUrl = 'https://m3u.ch/pl/59e9a608c3dd91dae2d9ec1fc9dbf52a_0989dd3fbd4c4512315b5b25e668cbf1.m3u';
-  
+// M3U থেকে চ্যানেল লোড
+async function loadChannelsFromM3U(url) {
   try {
-    const res = await fetch(m3uUrl);
+    const res = await fetch(url);
     const text = await res.text();
     const lines = text.split('\n');
+    let currentGroup = "Others";
 
     for (let i = 0; i < lines.length; i++) {
-      if (lines[i].startsWith('#EXTINF')) {
-        const nameMatch = lines[i].match(/,(.*)$/);
-        const logoMatch = lines[i].match(/tvg-logo="(.*?)"/);
-        const groupMatch = lines[i].match(/group-title="(.*?)"/);
-        const name = nameMatch ? nameMatch[1].trim() : "Unnamed Channel";
-        const img = logoMatch ? logoMatch[1].trim() : "https://i.postimg.cc/d16Y2v56/20250421-001244.png";
-        const group = groupMatch ? groupMatch[1].trim() : "Others";
-        const url = lines[i + 1]?.trim();
+      const line = lines[i];
+      if (line.startsWith("#EXTINF")) {
+        const name = line.split(',').pop().trim();
+        const logoMatch = line.match(/tvg-logo="(.*?)"/);
+        const groupMatch = line.match(/group-title="(.*?)"/);
+        const logo = logoMatch ? logoMatch[1] : "https://i.postimg.cc/d16Y2v56/20250421-001244.png";
+        currentGroup = groupMatch ? groupMatch[1] : currentGroup;
+        const streamUrl = lines[i + 1]?.trim();
 
-        if (url && url.startsWith('http')) {
-          if (!channels[group]) {
-            channels[group] = [];
-          }
-
-          channels[group].push({
+        if (streamUrl && streamUrl.startsWith("http")) {
+          if (!channels[currentGroup]) channels[currentGroup] = [];
+          channels[currentGroup].push({
             name: name,
-            img: img,
-            url: url,
-            isLive: false
+            img: logo,
+            url: streamUrl
           });
         }
       }
     }
-  } catch (error) {
-    console.error("M3U Load Error:", error);
+
+    // এখান থেকে আপনার চ্যানেল রেন্ডার ফাংশন কল করতে পারেন
+    // যেমন renderChannels(channels);
+  } catch (e) {
+    console.error("M3U Load Failed:", e);
   }
 }
 
-loadM3UChannels();
+// আপনার M3U লিংক এখানে দিন
+loadChannelsFromM3U("https://m3u.ch/pl/59e9a608c3dd91dae2d9ec1fc9dbf52a_0989dd3fbd4c4512315b5b25e668cbf1.m3u");
