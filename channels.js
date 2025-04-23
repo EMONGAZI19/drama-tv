@@ -39,7 +39,7 @@ const channels = {
   "Indian Bangla": [
     { name: "Star Jalsha", img: "https://i.postimg.cc/G38mGTkS/20250421-052453.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Zee Bangla", img: "https://i.postimg.cc/Mpx6Csgh/20250421-052543.png", url: "http://kst.moonplex.net:8080/CH4/index.m3u8", isLive: false },
-    { name: "Colors Bangla", img: "https://i.postimg.cc/Xv1nynXb/20250421-053157.png", url: "http://38.96.178.201/live/ColorsBangla/index.m3u8", isLive: false },
+    { name: "Colors Bangla", img: "https://i.postimg.cc/Xv1nynXb/20250421-053157.png", url: "https://catchup.yuppcdn.net/amazonv2/36/preview/colorsbanglahd/master/chunklist.m3u8", isLive: true },
     { name: "Sony Aath", img: "https://i.postimg.cc/VvnwTMgf/20250421-053825.png", url: "https://tv.bdixtv24.co/toffee/live.php?id=7e00fee81848&e=.m3u8", isLive: false },
     { name: "Jalsha Movies", img: "https://i.postimg.cc/J7kRGVLf/20250421-054133.png", url: "http://38.96.178.201/live/JalshaMovies/index.m3u8", isLive: false },
     { name: "Ruposhi Bangla", img: "https://i.postimg.cc/fRXdKgmp/20250421-065011.png", url: "http://38.96.178.201/live/RuposhiBangla/index.m3u8", isLive: false },
