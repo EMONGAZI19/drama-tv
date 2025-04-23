@@ -59,7 +59,7 @@ const channels = {
     { name: "Music 4", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false }
   ],
   "Sports": [
-    { name: "Sports 1", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
+    { name: "Sports 1", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "https://pol6.dunyapurkaraja.com:999/hls/star1in.m3u8?md5=rBc3AleNsAJh5SwA2LNhng&expires=1745444222", isLive: false },
     { name: "Sports 2", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Sports 3", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Sports 4", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
