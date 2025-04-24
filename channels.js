@@ -27,7 +27,7 @@ const channels = {
     { name: "BD Channel 10", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false }
   ],
   "Entertainment": [
-    { name: "Entertainment 1", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
+    { name: "Sony Pix", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "https://tataplay.slivcdn.com/hls/live/2011748/PIXHD/master.m3u8", isLive: false },
     { name: "Entertainment 2", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Entertainment 3", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Entertainment 4", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
@@ -60,7 +60,7 @@ const channels = {
   ],
   "Sports": [
     { name: "Sports 1", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "https://pol6.dunyapurkaraja.com:999/hls/star1in.m3u8?md5=rBc3AleNsAJh5SwA2LNhng&expires=1745444222", isLive: false },
-    { name: "Sports 2", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
+    { name: "Sports 2", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "https://pol7.dunyapurkaraja.com:999/hls/ptvpk.m3u8?md5=GhIAiMCGw1726c1dv_byrA&expires=1745517030", isLive: false },
     { name: "Sports 3", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Sports 4", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
     { name: "Sports 5", img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png", url: "http://kst.moonplex.net:8080/CH3/index.m3u8", isLive: false },
