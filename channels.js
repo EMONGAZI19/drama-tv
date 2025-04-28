@@ -7,9 +7,9 @@ const channels = {
       isLive: true
     },
     {
-      name: "Live test 2",
+      name: "Live test 2.0",
       img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "https://raw.githubusercontent.com/EMONGAZI19/XYZ/refs/heads/main/starbd.dramaworld.m3u8",
+      url: "https://livestream7.sunnxt.com/bf76ee92dd01473bb2eb57d137294484/SunBanglaB_IN_index.mpd",
       isLive: true
     },
   
