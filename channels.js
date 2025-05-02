@@ -1,4 +1,4 @@
-const channels = {
+const3 channels = {
   "Live Now": [
     {
       name: "Test ",
@@ -9,7 +9,7 @@ const channels = {
     {
       name: "Live test 2.0",
       img: "https://i.postimg.cc/d16Y2v56/20250421-001244.png",
-      url: "https://dj-jadutv-by-xfireflix.netlify.app/.netlify/functions/magicxtvbdxx/gazi_tv_hd.m3u8",
+      url: "https://tera.backend.live/file/734154c5371c16de94f08c70c07752b8.m3u8",
       isLive: true
     },
   
