@@ -1,4 +1,4 @@
-const3 channels = {
+const channels = {
   "Live Now": [
     {
       name: "Test ",
